@@ -17,7 +17,7 @@ const {
 
 
 
-router.get('/students/:id', async(req, res, next)=>{
+router.get('/:id', async(req, res, next)=>{
     try{
         const student = await Student.findById(req.params.id);
         // console.log('student: '+ req.params.id);
@@ -39,7 +39,7 @@ router.get('/students/:id', async(req, res, next)=>{
 });
 
 
-router.get('/students', async(req, res, next)=>{
+router.get('/', async(req, res, next)=>{
 try{
         const students = await Student.find({});        
         // console.log('student: '+ students);
@@ -61,7 +61,7 @@ try{
 });
 
 
-router.post('/students', async(req, res, next)=>{
+router.post('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await studentRegisterSchema.validateAsync(req.body);
@@ -95,7 +95,7 @@ router.post('/students', async(req, res, next)=>{
 });
 
 
-router.put('/students', async(req, res, next)=>{
+router.put('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await studentUpdateSchema.validateAsync(req.body);
@@ -124,7 +124,7 @@ router.put('/students', async(req, res, next)=>{
 });
 
 
-router.delete('/students', async(req, res, next)=>{
+router.delete('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await studentDeleteSchema.validateAsync(req.body);

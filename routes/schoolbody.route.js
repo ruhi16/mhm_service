@@ -12,7 +12,7 @@ const {
 
 
 
-router.get('/schoolbodys/:id', async(req, res, next)=>{
+router.get('/:id', async(req, res, next)=>{
     try{
         const schoolbody = await Schoolbody.findById(req.params.id);
         // console.log('schoolbody: '+ req.params.id);
@@ -34,7 +34,7 @@ router.get('/schoolbodys/:id', async(req, res, next)=>{
 });
 
 
-router.get('/schoolbodys', async(req, res, next)=>{
+router.get('/', async(req, res, next)=>{
 try{
         const schoolbodys = await Schoolbody.find({});        
         // console.log('schoolbody: '+ schoolbodys);
@@ -56,7 +56,7 @@ try{
 });
 
 
-router.post('/schoolbodys', async(req, res, next)=>{
+router.post('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await schoolbodyRegisterSchema.validateAsync(req.body);
@@ -86,7 +86,7 @@ router.post('/schoolbodys', async(req, res, next)=>{
 });
 
 
-router.put('/schoolbodys', async(req, res, next)=>{
+router.put('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await schoolbodyUpdateSchema.validateAsync(req.body);
@@ -115,7 +115,7 @@ router.put('/schoolbodys', async(req, res, next)=>{
 });
 
 
-router.delete('/schoolbodys', async(req, res, next)=>{
+router.delete('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await schoolbodyDeleteSchema.validateAsync(req.body);

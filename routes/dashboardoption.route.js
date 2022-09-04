@@ -19,7 +19,7 @@ const {
 
 
 
-router.get('/dashboardoptions/:schoolId', async(req, res, next)=>{
+router.get('/:schoolId', async(req, res, next)=>{
 
     try{
         const school = await School.findById(req.params.schoolId);    

@@ -12,7 +12,7 @@ const {
 } = require('../utils/school_validation_schema');
 
 
-router.get('/events/:id', async(req, res, next)=>{
+router.get('/:id', async(req, res, next)=>{
     try{
         const event = await Event.findById(req.params.id);
         // console.log('event: '+ req.params.id);
@@ -36,7 +36,7 @@ router.get('/events/:id', async(req, res, next)=>{
 });
 
 
-router.get('/events', async(req, res, next)=>{
+router.get('/', async(req, res, next)=>{
 try{
         const events = await Event.find({});        
         // console.log('event: '+ events);
@@ -58,7 +58,7 @@ try{
 });
 
 
-router.post('/events', async(req, res, next)=>{
+router.post('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await eventRegisterSchema.validateAsync(req.body);
@@ -87,7 +87,7 @@ router.post('/events', async(req, res, next)=>{
 });
 
 
-router.put('/events', async(req, res, next)=>{
+router.put('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await eventUpdateSchema.validateAsync(req.body);
@@ -114,7 +114,7 @@ router.put('/events', async(req, res, next)=>{
 });
 
 
-router.delete('/events', async(req, res, next)=>{
+router.delete('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await eventDeleteSchema.validateAsync(req.body);

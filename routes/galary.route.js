@@ -12,7 +12,7 @@ const {
 } = require('../utils/school_validation_schema');
 
 
-router.get('/galarys/:id', async(req, res, next)=>{
+router.get('/:id', async(req, res, next)=>{
     try{
         const galary = await Galary.findById(req.params.id);
         // console.log('galary: '+ req.params.id);
@@ -35,7 +35,7 @@ router.get('/galarys/:id', async(req, res, next)=>{
 });
 
 
-router.get('/galarys', async(req, res, next)=>{
+router.get('/', async(req, res, next)=>{
 try{
         const galarys = await Galary.find({});        
         // console.log('galary: '+ galarys);
@@ -57,7 +57,7 @@ try{
 });
 
 
-router.post('/galarys', async(req, res, next)=>{
+router.post('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await galaryRegisterSchema.validateAsync(req.body);
@@ -86,7 +86,7 @@ router.post('/galarys', async(req, res, next)=>{
 });
 
 
-router.put('/galarys', async(req, res, next)=>{
+router.put('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await galaryUpdateSchema.validateAsync(req.body);
@@ -113,7 +113,7 @@ router.put('/galarys', async(req, res, next)=>{
 });
 
 
-router.delete('/galarys', async(req, res, next)=>{
+router.delete('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await galaryDeleteSchema.validateAsync(req.body);

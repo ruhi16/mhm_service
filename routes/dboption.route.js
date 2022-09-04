@@ -12,7 +12,7 @@ const {
 } = require('../utils/school_validation_schema');
 
 
-router.get('/dboptions/:id', async(req, res, next)=>{
+router.get('/:id', async(req, res, next)=>{
     try{
         const dboption = await Dboption.findById(req.params.id);
         // console.log('dboption: '+ req.params.id);
@@ -36,7 +36,7 @@ router.get('/dboptions/:id', async(req, res, next)=>{
 });
 
 
-router.get('/dboptions', async(req, res, next)=>{
+router.get('/', async(req, res, next)=>{
 try{
         const dboptions = await Dboption.find({});        
         // console.log('dboption: '+ dboptions);
@@ -58,7 +58,7 @@ try{
 });
 
 
-router.post('/dboptions', async(req, res, next)=>{
+router.post('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await dboptionRegisterSchema.validateAsync(req.body);
@@ -87,7 +87,7 @@ router.post('/dboptions', async(req, res, next)=>{
 });
 
 
-router.put('/dboptions', async(req, res, next)=>{
+router.put('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await dboptionUpdateSchema.validateAsync(req.body);
@@ -114,7 +114,7 @@ router.put('/dboptions', async(req, res, next)=>{
 });
 
 
-router.delete('/dboptions', async(req, res, next)=>{
+router.delete('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await dboptionDeleteSchema.validateAsync(req.body);

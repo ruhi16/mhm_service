@@ -17,7 +17,7 @@ const {
 
 
 
-router.get('/notices/:id', async(req, res, next)=>{
+router.get('/:id', async(req, res, next)=>{
     try{
         const notice = await Notice.findById(req.params.id);
         // console.log('notice: '+ req.params.id);
@@ -41,7 +41,7 @@ router.get('/notices/:id', async(req, res, next)=>{
 });
 
 
-router.get('/notices', async(req, res, next)=>{
+router.get('/', async(req, res, next)=>{
 try{
         const notices = await Notice.find({});        
         // console.log('notice: '+ notices);
@@ -63,7 +63,7 @@ try{
 });
 
 
-router.post('/notices', async(req, res, next)=>{
+router.post('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await noticeRegisterSchema.validateAsync(req.body);
@@ -97,7 +97,7 @@ router.post('/notices', async(req, res, next)=>{
 });
 
 
-router.put('/notices', async(req, res, next)=>{
+router.put('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await noticeUpdateSchema.validateAsync(req.body);
@@ -126,7 +126,7 @@ router.put('/notices', async(req, res, next)=>{
 });
 
 
-router.delete('/notices', async(req, res, next)=>{
+router.delete('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await noticeDeleteSchema.validateAsync(req.body);

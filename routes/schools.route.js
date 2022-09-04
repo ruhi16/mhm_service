@@ -12,7 +12,7 @@ const {
 } = require('../utils/school_validation_schema');
 
 
-router.get('/self/:id', async(req, res, next)=>{
+router.get('/:id', async(req, res, next)=>{
     try{
         const school = await School.findById(req.params.id);
         // console.log('School: '+ req.params.id);
@@ -36,7 +36,7 @@ router.get('/self/:id', async(req, res, next)=>{
 });
 
 
-router.get('/self', async(req, res, next)=>{
+router.get('/', async(req, res, next)=>{
 try{
         const schools = await School.find({});        
         // console.log('School: '+ schools);
@@ -58,7 +58,7 @@ try{
 });
 
 
-router.post('/self', async(req, res, next)=>{
+router.post('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await schoolRegisterSchema.validateAsync(req.body);
@@ -93,7 +93,7 @@ router.post('/self', async(req, res, next)=>{
 });
 
 
-router.put('/self', async(req, res, next)=>{
+router.put('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await schoolUpdateSchema.validateAsync(req.body);
@@ -122,7 +122,7 @@ router.put('/self', async(req, res, next)=>{
 });
 
 
-router.delete('/self', async(req, res, next)=>{
+router.delete('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await schoolDeleteSchema.validateAsync(req.body);

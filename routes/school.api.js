@@ -9,52 +9,52 @@ router.use('/sessions', sessionRoute);
 
 // Schools Apis
 const schoolsRoute = require('../routes/schools.route');
-router.use('/', schoolsRoute);
+router.use('/self', schoolsRoute);
 
 
 
 // SchoolBody Option Apis
 const schoolbodyRoute = require('../routes/schoolbody.route');
-router.use('/', schoolbodyRoute);
+router.use('/schoolbodys', schoolbodyRoute);
 
 
 
 
 // Notices Apis
 const noticesRoute = require('../routes/notice.route');
-router.use('/', noticesRoute);
+router.use('/notices', noticesRoute);
 
 
 // Student Apis
 const studentsRoute = require('../routes/students.route');
-router.use('/', studentsRoute);
+router.use('/students', studentsRoute);
 
 
 
 // Teacher Apis
 const teachersRoute = require('../routes/teachers.route');
-router.use('/', teachersRoute);
+router.use('/teachers', teachersRoute);
 
 
 // Event Apis
 const eventRoute = require('../routes/event.route');
-router.use('/', eventRoute);
+router.use('/events', eventRoute);
 
 
 // Galary Apis
 const galaryRoute = require('../routes/galary.route');
-router.use('/', galaryRoute);
+router.use('/galarys', galaryRoute);
 
 
 // DbOption Apis
 const dboptionRoute = require('../routes/dboption.route');
-router.use('/', dboptionRoute);
+router.use('/dboptions', dboptionRoute);
 
 
 
 // Dashboard Option Apis
 const dashboardoptionRoute = require('../routes/dashboardoption.route');
-router.use('/', dashboardoptionRoute);
+router.use('/dashboardoptions', dashboardoptionRoute);
 
 
 
