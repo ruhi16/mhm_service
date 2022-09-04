@@ -12,7 +12,7 @@ const {
 
 
 
-router.get('/sessions/:id', async(req, res, next)=>{
+router.get('/:id', async(req, res, next)=>{
     try{
         const session = await Session.findById(req.params.id);
         // console.log('session: '+ req.params.id);
@@ -34,7 +34,7 @@ router.get('/sessions/:id', async(req, res, next)=>{
 });
 
 
-router.get('/sessions', async(req, res, next)=>{
+router.get('/', async(req, res, next)=>{
 try{
         const sessions = await Session.find({});        
         // console.log('session: '+ sessions);
@@ -56,7 +56,7 @@ try{
 });
 
 
-router.post('/sessions', async(req, res, next)=>{
+router.post('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await sessionRegisterSchema.validateAsync(req.body);
@@ -86,7 +86,7 @@ router.post('/sessions', async(req, res, next)=>{
 });
 
 
-router.put('/sessions', async(req, res, next)=>{
+router.put('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await sessionUpdateSchema.validateAsync(req.body);
@@ -115,7 +115,7 @@ router.put('/sessions', async(req, res, next)=>{
 });
 
 
-router.delete('/sessions', async(req, res, next)=>{
+router.delete('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await sessionDeleteSchema.validateAsync(req.body);

@@ -23,7 +23,7 @@ POST  http://localhost:3000/api/schools/sessions
 content-type: application/json
 
 {
-    "session_title": "2025",
+    "session_title": "2026",
     "session_img_url": "https://aaa",
     
     "description": "Current Session",
@@ -37,8 +37,8 @@ PUT  http://localhost:3000/api/schools/sessions
 content-type: application/json
 
 {
-    "_id": "630ee5021774d6692d00c4b5",
-    "session_title": "2022-23 updated",
+    "_id": "6314ae9e801c267ac22db7de",
+    "session_title": "2026-27 updated",
     "session_img_url": "https://aaa",
     
     "description": "Current Session",
@@ -54,7 +54,7 @@ DELETE  http://localhost:3000/api/schools/sessions
 content-type: application/json
 
 {
-    "_id": "630ee5021774d6692d00c4b5",    
+    "_id": "6314ae9e801c267ac22db7de",    
     "schoolId": "630b06b6a199681c56d152d3"
     
 }

@@ -4,7 +4,7 @@ const router = express.Router();
 
 // Session Apis
 const sessionRoute = require('../routes/session.route');
-router.use('/', sessionRoute);
+router.use('/sessions', sessionRoute);
 
 
 // Schools Apis
