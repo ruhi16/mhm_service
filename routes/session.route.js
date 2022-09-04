@@ -90,10 +90,12 @@ router.put('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await sessionUpdateSchema.validateAsync(req.body);
+        // console.log('session: '+ result._id.toString());
 
         const updatedSession = await Session.findOneAndUpdate({_id: result._id}, result, {new: true})
                             .select({"session_title": 1, "description": 1});
-        // console.log(updatedUser);
+        
+        // console.log('Updated Session: '+updatedSession);
         if(!updatedSession){
             throw createError.Conflict(`This session title '${result.session_title}' does not exists.`);
         }

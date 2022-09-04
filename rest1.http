@@ -37,7 +37,7 @@ PUT  http://localhost:3000/api/schools/sessions
 content-type: application/json
 
 {
-    "_id": "6314ae9e801c267ac22db7de",
+    "_id": "630ee5151774d6692d00c4b8",
     "session_title": "2026-27 updated",
     "session_img_url": "https://aaa",
     

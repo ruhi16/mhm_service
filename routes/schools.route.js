@@ -97,10 +97,12 @@ router.put('/', async(req, res, next)=>{
     try{
         // validation by Joi
         const result = await schoolUpdateSchema.validateAsync(req.body);
+        // console.log('result: '+ result.name);
+        console.log('result_id: '+ result._id);
 
         const updatedUser = await School.findOneAndUpdate({_id: result._id}, result, {new: true})
                             .select({"name": 1, "email": 1})
-        // console.log(updatedUser);
+        console.log(updatedUser);
         if(!updatedUser){
             throw createError.Conflict(`This school '${result.name}' does not exists.`);
         }
