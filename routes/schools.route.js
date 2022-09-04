@@ -102,7 +102,7 @@ router.put('/', async(req, res, next)=>{
                             .select({"name": 1, "email": 1})
         // console.log(updatedUser);
         if(!updatedUser){
-            throw createError.Conflict(`This email '${result.email}' does not exists.`);
+            throw createError.Conflict(`This school '${result.name}' does not exists.`);
         }
 
         

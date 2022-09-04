@@ -86,7 +86,7 @@ content-type: application/json
     "email":"manikchakhm1921@gmail.com",    
     "mobile":"1234567890",
     
-    "sessionId": "6144ed7d3a25d138702265a9",
+    "sessionId": "6314b02a994013b378a643db",
     "headmasterId": "6144ed7d3a25d138702265a9",
     "asstheadmasterId": "6144ed7d3a25d138702265a9"
 
@@ -97,14 +97,14 @@ PUT  https://mhm-services.herokuapp.com/api/schools/self
 content-type: application/json
 
 {
-    "_id": "630b004582c10c39eb9c9c9f",
-    "name":"Manikchak Abc High Madrasah(H.S)",
+    "_id": "6144ed7d3a25d138702265a9",
+    "name":"Manikchak High Madrasah(H.S)",
     "grade":"Higher Secondary",
     "schedule_time":"10:30 am to 04:30 pm",
-    "email":"manikchakhm1921@gmail.com",    
+    "email":"manikchakhm1921@gmail.com",  
     "mobile":"1234567890",
     
-    "sessionId": "6144ed7d3a25d138702265a9",
+    "sessionId": "6314b02a994013b378a643db",
     "headmasterId": "6144ed7d3a25d138702265a9",
     "asstheadmasterId": "6144ed7d3a25d138702265a9"
 
