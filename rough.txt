@@ -1,0 +1,146 @@
+const express = require('express');
+// const bodyparser = require('body-parser');
+const createError = require('http-errors');
+const morgan = require('morgan');
+
+
+const User = require('./models/user.model');
+const Address = require('./models/address.model');
+const Ambulance = require('./models/ambulance.model');
+
+
+
+const dotenv = require('dotenv');
+dotenv.config();
+
+const connectDB = require('./utils/database');
+connectDB();
+
+const app = express();
+app.use(express.json());
+
+app.use(morgan('tiny'));    //tiny, combined, dev
+
+
+const userRoute = require('./routes/auth.route');
+
+
+// Body-parser middleware
+// app.use(bodyparser.urlencoded({extended:false}))
+// app.use(bodyparser.json())
+
+
+// const { verifyAccessToken } = require('./utils/jwt_actions');
+// const { addressSchema } = require('./utils/validaton_schema');
+
+// app.post('/api/address', verifyAccessToken, async (req, res, next)=>{    
+//     console.log('payload', req.payload);
+//     try{
+//         const user = await User.findOne({_id: req.payload.aud}).exec();
+//         const result = await addressSchema.validateAsync(req.body);
+//         const addr = await new Address(result);
+//         addr.userId = req.payload.aud;
+//         const savedAddr = await addr.save();
+//         // const us = await User.findOne({_id: '612f41e7febd9a90421f7521'}).populate('address');
+        
+//         res.send({
+//             addr: savedAddr,
+//         });
+
+//     }catch(err){
+//         next(err);
+//     }
+// });
+
+
+
+const ambulanceRoute = require('./routes/ambulance.route');
+const addressRoute = require('./routes/address.route');
+
+
+
+// app.get('/api/address', async (req, res, next)=>{    
+//     try{
+//         const address = await Address.find({})
+//                 .populate({path:'userId', model:'User', select: {firstname: 1, lastname: 1, email: 1}}).select({pin:0});
+        
+//             //     .find(query).select({'advtId': 0})
+//             //     .populate({
+//             //        path: 'influId',
+//             //        model: 'influencer',
+//             //        select: { '_id': 1,'user':1},
+//             //        populate: {
+//             //          path: 'userid',
+//             //          model: 'User'
+//             //        }
+//             //     })
+//             //   .populate('campaignId',{'campaignTitle':1})
+//             //   .exec(callback);
+            
+//         res.send({
+//             address          
+//         });
+
+//     }catch(err){
+//         next(err);
+//     }
+// });
+
+
+// const { ambulanceSchema } = require('./utils/validaton_schema');
+
+// app.post('/api/ambs', async (req, res, next) => {    
+//     try{
+//         const result = await ambulanceSchema.validateAsync(req.body);
+//         // console.log(result);
+//         const amb = await new Ambulance(result);
+//         const savedAmbulance = await amb.save();
+
+//         res.send({
+//             ambulance: savedAmbulance
+//         });
+//     }catch (err){
+//         next(err);
+//     }
+// });
+
+
+
+
+
+
+// root of the Page
+app.get('/', (req, res)=>{
+    res.send({status: 200, message: "This is Root."})
+});
+
+
+app.use('/api/users', userRoute);
+app.use('/api/ambulance', ambulanceRoute);
+app.use('/api/address', addressRoute);
+
+
+
+
+// any root, not matched.
+app.use((req, res, next)=>{
+    next(createError.NotFound('Page not found!'));
+});
+
+// hit, whenever next() arrive with an 'error' object
+app.use((err, req, res, next)=>{
+    res.status(err.status || 500);
+    res.send({error: {
+        status: err.status || 500,
+        message: err.message
+    }});
+});
+
+
+
+
+//listening port at server end
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, ()=>{
+    console.log(`I am listening from port no ${PORT}`);
+});

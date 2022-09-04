@@ -1,0 +1,7 @@
+{
+    "name": "production - Online Ambulance Service...",
+    "dbconn": {        
+        "mongodbURI" : "mongodb+srv://ruhi16:asdf1234@cluster0.g0otn.mongodb.net/amb_service?retryWrites=true&w=majority"
+    }
+}
+

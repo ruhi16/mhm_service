@@ -1,0 +1,943 @@
+@ACCESS_TOKEN=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjA5NzIzOTEsImV4cCI6MTY2MTA1ODc5MSwiYXVkIjoiNjMwMDVlNjMyNjM2YjlmZTFiNTMwNDdmIiwiaXNzIjoicmF3c29sdXRpb25zLmNvbSJ9.RWwR-lco7gp7Zu0UULhVKZbt_6k0t1XXDW-NxK2AwZI
+@REFRESH_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjA5Njg1NDcsImV4cCI6MTY5MjUyNjE0NywiYXVkIjoiNjMwMDVlNjMyNjM2YjlmZTFiNTMwNDdmIiwiaXNzIjoicmF3c29sdXRpb25zLmNvbSJ9.OMfw6TbfG5OdAm8Pi4b-RoOfl7vo28dp4VN8ycS3nPA
+
+
+### Live Root Page ###
+https://amb-service.herokuapp.com
+
+
+
+//======================= school apis =====================================
+//----------------------- Session -------------------------------------
+### Get 1 Session Info(GET Page) ###
+GET  http://localhost:3000/api/schools/sessions/630ee5021774d6692d00c4b5
+content-type: application/json
+
+
+### Get All Sessions Info(GET Page) ###
+GET  http://localhost:3000/api/schools/sessions
+content-type: application/json
+
+### New session Add(Post Page) ###
+POST  http://localhost:3000/api/schools/sessions
+content-type: application/json
+
+{
+    "session_title": "2025",
+    "session_img_url": "https://aaa",
+    
+    "description": "Current Session",
+    
+    "isActive": true
+    
+}
+
+### Update Session Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/sessions
+content-type: application/json
+
+{
+    "_id": "630ee5021774d6692d00c4b5",
+    "session_title": "2022-23 updated",
+    "session_img_url": "https://aaa",
+    
+    "description": "Current Session",
+    
+    "isActive": true,
+    
+    "schoolId": "630b06b6a199681c56d152d3"
+
+}
+
+### Delete Session Info(Put Page) ###
+DELETE  http://localhost:3000/api/schools/sessions
+content-type: application/json
+
+{
+    "_id": "630ee5021774d6692d00c4b5",    
+    "schoolId": "630b06b6a199681c56d152d3"
+    
+}
+
+
+
+//----------------------- School -------------------------------------
+### Get 1 Schools Info(GET Page) ###
+GET  http://localhost:3000/api/schools/self/630b06b6a199681c56d152d3
+content-type: application/json
+
+
+### Get All Schools Info(GET Page) ###
+GET  http://localhost:3000/api/schools/self
+content-type: application/json
+
+### New School Add(Post Page) ###
+POST  http://localhost:3000/api/schools/self
+content-type: application/json
+
+{
+    "name":"Manikchak Abc High Madrasah(H.S)",
+    "grade":"Higher Secondary",
+    "schedule_time":"10:30 am to 04:30 pm",
+    "email":"manikchakhm1921@gmail.com",    
+    "mobile":"1234567890",
+    
+    "sessionId": "6144ed7d3a25d138702265a9",
+    "headmasterId": "6144ed7d3a25d138702265a9",
+    "asstheadmasterId": "6144ed7d3a25d138702265a9"
+
+}
+
+### Update School Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/self
+content-type: application/json
+
+{
+    "_id": "630b004582c10c39eb9c9c9f",
+    "name":"Manikchak Abc High Madrasah(H.S)",
+    "grade":"Higher Secondary",
+    "schedule_time":"10:30 am to 04:30 pm",
+    "email":"manikchakhm1921@gmail.com",    
+    "mobile":"1234567890",
+    
+    "sessionId": "6144ed7d3a25d138702265a9",
+    "headmasterId": "6144ed7d3a25d138702265a9",
+    "asstheadmasterId": "6144ed7d3a25d138702265a9"
+
+}
+
+### Delete School Info(Put Page) ###
+DELETE  http://localhost:3000/api/schools/self
+content-type: application/json
+
+{
+    "_id": "630b004582c10c39eb9c9c9f",    
+    "heasmasterId": "6144ed7d3a25d138702265a9"
+}
+
+//----------------------- Notice -------------------------------------
+### Get 1 Notice Info(GET Page) ###
+GET  http://localhost:3000/api/schools/notices/630b7ff2eb42f184ee428ec3
+content-type: application/json
+
+
+### Get All Notices Info(GET Page) ###
+GET  http://localhost:3000/api/schools/notices
+content-type: application/json
+
+
+### New Notice Add(Post Page) ###
+POST  http://localhost:3000/api/schools/notices
+content-type: application/json
+
+{
+    "noticeTitle": "This is second notice",
+    "addr_to": "All Students",
+    "ref_from": "Headmaster",
+    "description": "This is description of first notice",
+    "date_publ": "2022-08-20",
+    "date_expr": "2022-08-31",
+    "priority": "Urgent",    
+    "isActive": true,
+    "schoolId": "630b004582c10c39eb9c9c9f",
+    "publ_by": "6144ed7d3a25d138702265a9",
+    "publ_by_desig": "Headmaster"
+}
+
+
+### Update Notice Update Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/notices
+content-type: application/json
+
+{
+    "_id": "630b801aeb42f184ee428ec7",
+    "noticeTitle": "This is second updated notice",
+    "addr_to": "All Students",
+    "ref_from": "Headmaster",
+    "description": "This is description of first notice",
+    "date_publ": "2022-08-20",
+    "date_expr": "2022-08-31",
+    "priority": "Urgent",    
+    "isActive": true,
+    "schoolId": "630b004582c10c39eb9c9c9f",
+    "publ_by": "6144ed7d3a25d138702265a9",
+    "publ_by_desig": "Headmaster"
+}
+
+### Delete Notice Delete Info(Delete Page) ###
+DELETE  http://localhost:3000/api/schools/notices
+content-type: application/json
+
+{
+    "_id": "630b801aeb42f184ee428ec7",    
+    "schoolId": "6144ed7d3a25d138702265a9",
+    "publ_by": "630b801aeb42f184ee428ec7"
+}
+
+//----------------------- Student -------------------------------------
+### Get 1 Student Info(GET Page) ###
+GET  http://localhost:3000/api/schools/students/630e51ca1fd585799684a784
+content-type: application/json
+
+
+### Get All Students Info(GET Page) ###
+GET  http://localhost:3000/api/schools/students
+content-type: application/json
+
+
+### New Student Add(Post Page) ###
+POST  http://localhost:3000/api/schools/students
+content-type: application/json
+
+{
+    "firstname": "Gopal Ram",
+    "lastname": "Goswami",
+
+    "fathername": "Dashrath Goswami",
+    "mothername": "Kalpana Devi",
+    "email": "abcde2011@gmail.com",
+    "mobile": ["1234567899"],
+
+    "schoolId": "6144ed7d3a25d138702265a9",
+    "userId": "630e51ca1fd585799684a784"
+}
+
+
+### Update Student Update Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/students
+content-type: application/json
+
+{
+    "_id": "630e51ca1fd585799684a784",
+    "firstname": "Gopal Ram Chandra",
+    "lastname": "Goswami",
+
+    "fathername": "Dashrath Goswami",
+    "mothername": "Kalpana Devi",
+    "email": "abcde2010@gmail.com",
+    "mobile": ["1234567890"],
+
+    "schoolId":"6144ed7d3a25d138702265a9",
+    "userId": "630e51ca1fd585799684a784"
+}
+
+### Delete Student Delete Info(Delete Page) ###
+DELETE  http://localhost:3000/api/schools/students
+content-type: application/json
+
+{
+    "_id": "630e52241fd585799684a789",    
+    "schoolId": "6144ed7d3a25d138702265a9",
+    "userId": "630e51ca1fd585799684a784"
+}
+
+
+//----------------------- Teacher -------------------------------------
+### Get 1 Teacher Info(GET Page) ###
+GET  http://localhost:3000/api/schools/teachers/630e5cd56c1ba136fa1bd3ab
+content-type: application/json
+
+
+### Get All Teachers Info(GET Page) ###
+GET  http://localhost:3000/api/schools/teachers
+content-type: application/json
+
+
+### New Teacher Add(Post Page) ###
+POST  http://localhost:3000/api/schools/teachers
+content-type: application/json
+
+{
+    "firstname": "Samar",
+    "lastname": "Goswami",
+    
+    "email": "abcde2020@gmail.com",
+    "mobile": ["1234567899"],
+
+    "schoolId": "630b06b6a199681c56d152d3",
+    "userId": "630e51ca1fd585799684a784"
+}
+
+
+### Update Teacher Update Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/teachers
+content-type: application/json
+
+{
+    "_id": "630e5cc26c1ba136fa1bd3a7",
+    "firstname": "Gopal",
+    "lastname": "Goswami",
+
+    "email": "abcde2011@gmail.com",
+    "mobile": ["1234567890"],
+
+    "schoolId":"630b06b6a199681c56d152d3",
+    "userId": "630e51ca1fd585799684a784"
+}
+
+### Delete Teacher Delete Info(Delete Page) ###
+DELETE  http://localhost:3000/api/schools/teachers
+content-type: application/json
+
+{
+    "_id": "630e5cd56c1ba136fa1bd3ab",    
+    "schoolId": "6144ed7d3a25d138702265a9",
+    "userId": "630e51ca1fd585799684a784"
+}
+
+
+//----------------------- Event -------------------------------------
+### Get 1 Event Info(GET Page) ###
+GET  http://localhost:3000/api/schools/events/630ec74fa703be6058aea22b
+content-type: application/json
+
+
+### Get All events Info(GET Page) ###
+GET  http://localhost:3000/api/schools/events
+content-type: application/json
+
+
+### New Event Add(Post Page) ###
+POST  http://localhost:3000/api/schools/events
+content-type: application/json
+
+{
+    "event_title": "New Games Event",    
+    "description":  "Football turnament will happen at our school ground.",
+    
+    "addr_to": "Regular Students",
+    "ref_from": "Headmaster",
+    
+    "date_publ": "2022-09-05",
+    "date_expr": "2022-09-30",    
+    
+    "priority": "Urgent",
+    
+    "isActive": true,
+    
+    "publ_by": "630e51ca1fd585799684a784",
+    "publ_by_desig": "Headmaster",
+    
+    "schoolId": "6144ed7d3a25d138702265a9"
+}
+
+
+### Update Event Update Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/events
+content-type: application/json
+
+{
+    "_id": "630ec74fa703be6058aea22b",
+    "event_title": "New Sports Event updated",    
+    "description":  "Football turnament will happen at our school ground.",
+    
+    "addr_to": "Regular Students",
+    "ref_from": "Headmaster",
+    
+    "date_publ": "2022-09-05",
+    "date_expr": "2022-09-30",    
+    
+    "priority": "Urgent",
+    
+    "isActive": true,
+    
+    "publ_by": "630e51ca1fd585799684a784",
+    "publ_by_desig": "Headmaster",
+    
+    "schoolId": "6144ed7d3a25d138702265a9"
+}
+
+### Delete Event Delete Info(Delete Page) ###
+DELETE  http://localhost:3000/api/schools/events
+content-type: application/json
+
+{
+    "_id": "630ec7b3cdcbc3c51294b1a9",    
+    "schoolId": "6144ed7d3a25d138702265a9"
+}
+
+
+
+//----------------------- Galary -------------------------------------
+### Get 1 Galary Info(GET Page) ###
+GET  http://localhost:3000/api/schools/galarys/630ecf13319cfb0fa374891b
+content-type: application/json
+
+
+### Get All Galarys Info(GET Page) ###
+GET  http://localhost:3000/api/schools/galarys
+content-type: application/json
+
+
+### New Galary Add(Post Page) ###
+POST  http://localhost:3000/api/schools/galarys
+content-type: application/json
+
+{
+    "img_title": "School New Image",    
+    "img_url": "https://rawsolutons.com/image001002",
+
+    "description":  "Manikchak High Madrasah",    
+        
+    "date_publ": "2022-09-05",
+    
+    "priority": "Urgent",
+    
+    "isActive": true,
+    
+    "publ_by": "630e51ca1fd585799684a784",    
+    
+    "schoolId": "6144ed7d3a25d138702265a9"    
+}
+
+
+### Update Galary Update Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/galarys
+content-type: application/json
+
+{
+    "_id": "630ecf2a319cfb0fa374891f",
+    "img_title": "School Image Updated",    
+    "img_url": "https://rawsolutons.com/image001002",
+
+    "description":  "Manikchak High Madrasah",
+    
+        
+    "date_publ": "2022-09-05",        
+    
+    "priority": "Urgent",
+    
+    "isActive": true,
+    
+    "publ_by": "630e51ca1fd585799684a784",    
+    
+    "schoolId": "6144ed7d3a25d138702265a9"
+    
+}
+
+### Delete Galary Delete Info(Delete Page) ###
+DELETE  http://localhost:3000/api/schools/galarys
+content-type: application/json
+
+{
+    "_id": "630ecf2a319cfb0fa374891f",    
+    "schoolId": "6144ed7d3a25d138702265a9"
+    
+}
+
+
+//----------------------- School Body  -------------------------------------
+### Get 1 SchoolBody Info(GET Page) ###
+GET  http://localhost:3000/api/schools/schoolbodys/63101f74512ba10f5781f688
+content-type: application/json
+
+
+### Get All SchoolBodys Info(GET Page) ###
+GET  http://localhost:3000/api/schools/schoolbodys
+content-type: application/json
+
+
+### New SchoolBody Add(Post Page) ###
+POST  http://localhost:3000/api/schools/schoolbodys
+content-type: application/json
+
+{
+    "body_name": "MC Election New",    
+    "member_name": "Ram Sundar",
+    "member_img_url": ["https://rawsolutions.org/img012145"],
+    "member_desig": "President",
+    "member_isActive": true,
+    "member_desc": "abcdef ghijkl",
+
+    "member_doj": "2022-06-15",
+    "member_doe": "2022-09-15",
+    "member_priority": "Urgent",
+
+    "schoolId": "6144ed7d3a25d138702265a9"
+}
+
+
+### Update SchoolBody Update Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/schoolbodys
+content-type: application/json
+
+{
+    "_id": "63101f74512ba10f5781f688",
+    "body_name": "MC Election again",    
+    "member_name": "Ram Sundar",
+    "member_img_url": ["https://rawsolutions.org/img012145"],
+    "member_desig": "President",
+    "member_isActive": true,
+    "member_desc": "abcdef ghijkl",
+
+    "member_doj": "2022-06-15",
+    "member_doe": "2022-09-15",
+    "member_priority": "Urgent",
+
+    "schoolId": "6144ed7d3a25d138702265a9"
+}
+
+### Delete SchoolBody Delete Info(Delete Page) ###
+DELETE  http://localhost:3000/api/schools/schoolbodys
+content-type: application/json
+
+{
+    "_id": "63101f74512ba10f5781f688",    
+    "schoolId": "6144ed7d3a25d138702265a9"    
+}
+
+//----------------------- DbOption -------------------------------------
+### Get 1 Event Info(GET Page) ###
+GET  http://localhost:3000/api/schools/dboptions/630f77b624e0c20f38da87cc
+content-type: application/json
+
+
+### Get All DbOptions Info(GET Page) ###
+GET  http://localhost:3000/api/schools/dboptions
+content-type: application/json
+
+
+### New DbOptions Add(Post Page) ###
+POST  http://localhost:3000/api/schools/dboptions
+content-type: application/json
+
+{
+    "title": "MC Election",    
+    "img_url": "https://rawsolutions.org/img012145",
+    "description":  "Football turnament will happen at our school ground.",    
+    "type": "Card",
+    "priority": "Urgent",    
+    "isActive": true,    
+    "schoolId": "6144ed7d3a25d138702265a9"
+}
+
+
+### Update DbOptions Update Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/dboptions
+content-type: application/json
+
+{
+    "_id": "630f77d824e0c20f38da87cf",
+    "title": "New Game Options",    
+    "img_url": "https://rawsolutions.org/img012145",
+    "description":  "Football turnament will happen at our school ground.",    
+    "type": "Card",
+    "priority": "Urgent",    
+    "isActive": true,    
+    "schoolId": "630b06b6a199681c56d152d3"
+}
+
+### Delete DbOptions Delete Info(Delete Page) ###
+DELETE  http://localhost:3000/api/schools/dboptions
+content-type: application/json
+
+{
+    "_id": "630f77b624e0c20f38da87cc",    
+    "schoolId": "6144ed7d3a25d138702265a9"    
+}
+
+
+
+
+
+//----------------------- DashboardOption -------------------------------------
+### Get 1 Event Info(GET Page) ###
+GET  http://localhost:3000/api/schools/dashboardoptions/630b06b6a199681c56d152d3
+content-type: application/json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//============================================================
+
+
+
+### Root Page ###
+GET http://localhost:3000/
+content-type: application/json,
+
+
+
+
+### Register Page ###
+POST  http://localhost:3000/api/users/register
+content-type: application/json
+
+{
+    "firstname":"Ayantika",
+    "lastname":"Das",
+    "email":"hndas2022@gmail.com",
+    "password":"ab"
+}
+
+
+
+
+
+
+
+
+
+
+### Verify Url Page ###
+GET  http://localhost:3000/api/users/Vd3coLF9JFXjYHJgYyY4
+content-type: application/json
+
+
+
+
+
+
+
+
+
+
+### Is_Verified Email Url (After Login, with AccTok) ###
+GET  http://localhost:3000/api/users/is_verify_email_url
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+
+
+
+
+
+### Verify Url only ###
+GET  http://localhost:3000/api/users/self/9MsapikmTQYVXKyKcW4C
+content-type: application/json
+
+
+
+
+
+
+
+
+
+
+### Login Page ###
+POST  http://localhost:3000/api/users/login
+content-type: application/json
+
+{    
+    "email":"hndas2022@gmail.com",
+    "password":"ab"
+}
+
+
+
+
+
+
+### Update Page ###
+PUT http://localhost:3000/api/users/update
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{
+    "_id": "63005e632636b9fe1b53047f",
+    "firstname": "Ayantika Hari Narayan",
+    "lastname": "Das"
+}
+
+
+
+
+
+
+
+
+### Delete User ###
+DELETE http://localhost:3000/api/users/delete
+content-type: application/json
+
+{
+    "_id": "6144ed7d3a25d138702265a9"
+    
+}
+
+
+
+
+
+
+
+### User's Dashboard
+GET http://localhost:3000/api/users
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+
+
+
+
+
+
+### Only Logged In & Authenticated User 
+GET http://localhost:3000/api/users
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+
+
+
+### All Users List original
+GET http://localhost:3000/api/users/allalong
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+
+### All Users List
+GET http://localhost:3000/api/users/613273513aae8b05281b70dd
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+### Address New
+POST http://localhost:3000/api/address
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{
+    "pin": "742123",
+    "ps": "Azimganj",
+    "po": "Jiaganj",
+    "dist": "Murshidabad",
+    "state": "WestBengal"
+}
+
+
+### Ambulance New
+POST http://localhost:3000/api/ambulance
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{
+    "inst_name": "Jiaganj Sanjeevani",
+    "car_type": "Normal",
+    "car_model": "Maruti Omni",
+    "car_no": "WB58 AQ 5421",    
+    "base_addr_id": "612fd8129f3f2809ac6d2c3e",
+    "dest_addr_id": ["612fd8129f3f2809ac6d2c3e","612fd8129f3f2809ac6d2c3e"],
+    "services": ["AC","Oxygen"]
+}
+
+
+
+
+
+
+
+
+
+
+### Test Only: Show all addresses
+GET http://localhost:3000/api/address
+content-type: application/json
+
+
+### Show All Address
+http://amb-service.herokuapp.com/api/address
+content-type: application/json
+
+
+
+
+
+
+
+
+
+### Test Only
+GET http://amb-service.herokuapp.com/
+content-type: application/json
+
+
+
+
+
+
+
+
+
+
+
+### Home Page ###
+GET http://localhost:3000/ping
+content-type: application/json,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### User's Dashboard
+GET http://localhost:3000/api/users
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+
+
+
+
+
+
+### Registered User's OTP Verification
+POST http://localhost:3000/api/users/OTP_vefiry
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{
+    "otp":"2412" 
+}
+
+
+
+
+
+### Registered User's OTP Resend
+GET http://localhost:3000/api/users/OTP_resend
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### User's New Post
+POST http://localhost:3000/api/users/post
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{       
+    "caption":"this is my caption",
+    "img_link":"https://pixcel.com"
+}
+
+
+
+### User's New Comment on any post
+POST http://localhost:3000/api/users/post/comment
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{    
+    "post_id":"5fa2e9bf52d4601444c6e1dd",
+    "comment_text":"this is my comment on any post"    
+}
+
+
+
+
+
+
+### User's Logout
+POST http://localhost:3000/api/logout
+content-type: application/json,
+authorization: {{ACCESS_TOKEN}} 
+
+{
+    "refresh_token": ""
+}
+
+
+
+
+
+
+
+### New Request ###
+GET http://localhost:3000/unknown
+
+
+
+
+
+
+### All Clubs
+GET http://localhost:3000/api/clubs
+
+
+
+
+### All Clubs
+POST http://localhost:3000/api/clubs/register
+content-type: application/json
+
+{
+
+}
