@@ -161,6 +161,38 @@ const studentDeleteSchema = Joi.object({
     userId: Joi.objectId(),
 });
 
+//============================= Student CR schema =============================================================
+
+const studentcrRegisterSchema = Joi.object({
+    
+    studentId: Joi.objectId(),
+
+    class: Joi.string().min(1).max(30).required(),
+    section: Joi.string().min(1).max(10).required(),
+    roll_no: Joi.string().min(1).max(10).required(),
+    
+    sessionId: Joi.objectId(),
+    schoolId: Joi.objectId()    
+         
+});
+
+const studentcrUpdateSchema = Joi.object({
+    _id: Joi.objectId(), 
+    studentId: Joi.objectId(),
+
+    class: Joi.string().min(1).max(30).required(),
+    section: Joi.string().min(1).max(10).required(),
+    roll_no: Joi.string().min(1).max(10).required(),
+    
+    sessionId: Joi.objectId(),
+    schoolId: Joi.objectId()    
+});
+
+const studentcrDeleteSchema = Joi.object({
+    _id: Joi.objectId(),     
+    sessionId: Joi.objectId(),
+    schoolId: Joi.objectId()    
+});
 
 
 //============================= Teacher schema =============================================================
@@ -368,6 +400,64 @@ const dboptionDeleteSchema = Joi.object({
 });
 
 
+//============================= Class schema =============================================================
+
+const classRegisterSchema = Joi.object({
+    name: Joi.string().min(1).max(30).required(),
+    description: Joi.string().min(3).max(100).required(), 
+    
+    index: Joi.number().empty("").allow(null),
+    
+    sections: Joi.array().items(Joi.objectId()),
+
+    sessionId: Joi.objectId(),       
+    schoolId: Joi.objectId()       
+});
+
+const classUpdateSchema = Joi.object({
+    _id: Joi.objectId(), 
+    name: Joi.string().min(1).max(30).required(),
+    description: Joi.string().min(3).max(100).required(),    
+    index: Joi.number().empty("").allow(null),
+    
+    sections: [Joi.objectId()],
+
+    sessionId: Joi.objectId(),       
+    schoolId: Joi.objectId()    
+});
+
+const classDeleteSchema = Joi.object({
+    _id: Joi.objectId(),     
+    sessionId: Joi.objectId(), 
+    schoolId: Joi.objectId()    
+});
+
+//============================= Section schema =============================================================
+
+const sectionRegisterSchema = Joi.object({
+    name: Joi.string().min(1).max(30).required(),
+    description: Joi.string().min(3).max(100).required(),    
+    
+    sessionId: Joi.objectId(),       
+    schoolId: Joi.objectId()       
+});
+
+const sectionUpdateSchema = Joi.object({
+    _id: Joi.objectId(), 
+    name: Joi.string().min(1).max(30).required(),
+    description: Joi.string().min(3).max(100).required(),    
+    
+    sessionId: Joi.objectId(),       
+    schoolId: Joi.objectId()    
+});
+
+const sectionDeleteSchema = Joi.object({
+    _id: Joi.objectId(),     
+    sessionId: Joi.objectId(), 
+    schoolId: Joi.objectId()    
+});
+
+
 
 
 
@@ -445,6 +535,10 @@ module.exports = {
     studentUpdateSchema,
     studentDeleteSchema,
 
+    studentcrRegisterSchema,
+    studentcrUpdateSchema,
+    studentcrDeleteSchema,
+
     teacherRegisterSchema,
     teacherUpdateSchema,
     teacherDeleteSchema,
@@ -467,13 +561,15 @@ module.exports = {
 
 
 
+    classRegisterSchema,
+    classUpdateSchema,
+    classDeleteSchema,
 
+    sectionRegisterSchema,
+    sectionUpdateSchema,
+    sectionDeleteSchema,
 
-
-
-
-
-
+    
 
     dboptionRegisterSchema,
     dboptionUpdateSchema,

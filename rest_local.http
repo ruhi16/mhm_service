@@ -1,6 +1,8 @@
 @ACCESS_TOKEN=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjA5NzIzOTEsImV4cCI6MTY2MTA1ODc5MSwiYXVkIjoiNjMwMDVlNjMyNjM2YjlmZTFiNTMwNDdmIiwiaXNzIjoicmF3c29sdXRpb25zLmNvbSJ9.RWwR-lco7gp7Zu0UULhVKZbt_6k0t1XXDW-NxK2AwZI
 @REFRESH_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjA5Njg1NDcsImV4cCI6MTY5MjUyNjE0NywiYXVkIjoiNjMwMDVlNjMyNjM2YjlmZTFiNTMwNDdmIiwiaXNzIjoicmF3c29sdXRpb25zLmNvbSJ9.OMfw6TbfG5OdAm8Pi4b-RoOfl7vo28dp4VN8ycS3nPA
 
+@schoolId=630b06b6a199681c56d152d3
+@sessionId=630ee5151774d6692d00c4b8
 
 ### Live Root Page ###
 https://amb-service.herokuapp.com
@@ -26,10 +28,8 @@ content-type: application/json
     "session_title": "2026",
     "session_img_url": "https://aaa",
     
-    "description": "Current Session",
-    
-    "isActive": true
-    
+    "description": "Current Session",    
+    "isActive": true    
 }
 
 ### Update Session Info(Put Page) ###
@@ -230,6 +230,180 @@ content-type: application/json
     "schoolId": "6144ed7d3a25d138702265a9",
     "userId": "630e51ca1fd585799684a784"
 }
+
+
+//----------------------- Student Cr -------------------------------------
+### Get 1 Student cr Info(GET Page) ###
+GET  http://localhost:3000/api/schools/studentcrs/6315aa5162b0b045cfab64c2
+content-type: application/json
+
+
+### Get All Students cr Info(GET Page) ###
+GET  http://localhost:3000/api/schools/studentcrs
+content-type: application/json
+
+
+### New Student cr Add(Post Page) ###
+POST  http://localhost:3000/api/schools/studentcrs
+content-type: application/json
+
+{
+    "studentId": "630e52241fd585799684a789",
+    "class": "V",
+    "section": "A",
+    "roll_no": "6",
+    
+    "sessionId": "{{sessionId}}",
+    "schoolId": "{{schoolId}}"
+    
+}
+
+
+### Update Student cr Update Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/studentcrs
+content-type: application/json
+
+{
+    "_id": "6315aa5162b0b045cfab64c2",
+    "studentId": "Gopal Ram",
+    "class": "V",
+    "section": "A",
+    "roll_no": "5",
+    
+    "sessionId": "{{sessionId}}",
+    "schoolId": "{{schoolId}}",
+}
+
+### Delete Student cr Delete Info(Delete Page) ###
+DELETE  http://localhost:3000/api/schools/studentcrs
+content-type: application/json
+
+{
+    "_id": "6315aa5162b0b045cfab64c2",
+    "sessionId": "{{sessionId}}",
+    "schoolId": "{{schoolId}}",
+}
+
+
+//----------------------- Classes -------------------------------------
+### Get 1 Class Info(GET Page) ###
+GET  http://localhost:3000/api/schools/classes/6315aa5162b0b045cfab64c2
+content-type: application/json
+
+
+### Get All Class Info(GET Page) ###
+GET  http://localhost:3000/api/schools/classes
+content-type: application/json
+
+
+### New Class Add(Post Page) ###
+POST  http://localhost:3000/api/schools/classes
+content-type: application/json
+
+{
+    "name": "X",
+    "description": "for age 11yrs",
+    "index": 1,
+
+    "sections": [
+        "6315fe48fb89a861c6fb230b",
+        "6315fe48fb89a861c6fb230b",
+        "6315fe59fb89a861c6fb2312"
+        
+    ],
+    
+    "sessionId": "{{sessionId}}",
+    "schoolId": "{{schoolId}}"
+    
+}
+
+
+### Update Class Update Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/classes
+content-type: application/json
+
+{
+    "_id": "6315aa5162b0b045cfab64c2",
+    "name": "V",
+    "description": "for age 11yrs",
+    "index": 1,
+
+    "sections": [
+        "6315fe48fb89a861c6fb230b",
+        "6315fe48fb89a861c6fb230b",
+        "6315fe59fb89a861c6fb2312",
+        "6315fe5ffb89a861c6fb2315",
+        "6315fe64fb89a861c6fb2318",
+        "6315fe6dfb89a861c6fb231b"
+    ],
+    
+    "sessionId": "{{sessionId}}",
+    "schoolId": "{{schoolId}}"
+}
+
+### Delete Class Delete Info(Delete Page) ###
+DELETE  http://localhost:3000/api/schools/classes
+content-type: application/json
+
+{
+    "_id": "6315aa5162b0b045cfab64c2",
+    "sessionId": "{{sessionId}}",
+    "schoolId": "{{schoolId}}",
+}
+
+
+
+
+
+//----------------------- Section -------------------------------------
+### Get 1 Section Info(GET Page) ###
+GET  http://localhost:3000/api/schools/sections/6315aa5162b0b045cfab64c2
+content-type: application/json
+
+
+### Get All Section Info(GET Page) ###
+GET  http://localhost:3000/api/schools/sections
+content-type: application/json
+
+
+### New Section Add(Post Page) ###
+POST  http://localhost:3000/api/schools/sections
+content-type: application/json
+
+{
+    "name": "F",
+    "description": "for different classes",
+        
+    "sessionId": "{{sessionId}}",
+    "schoolId": "{{schoolId}}"
+    
+}
+
+
+### Update Section Update Info(Put Page) ###
+PUT  http://localhost:3000/api/schools/sections
+content-type: application/json
+
+{
+    "_id": "6315aa5162b0b045cfab64c2",
+    "name": "A",
+    "description": "for different classes",
+        
+    "sessionId": "{{sessionId}}",
+    "schoolId": "{{schoolId}}"
+    
+}
+
+### Delete Section Delete Info(Delete Page) ###
+DELETE  http://localhost:3000/api/schools/sections
+content-type: application/json
+
+{
+    "_id": "6315aa5162b0b045cfab64c2",
+    "sessionId": "{{sessionId}}",
+    "schoolId": "{{schoolId}}",
+}
+
 
 
 //----------------------- Teacher -------------------------------------

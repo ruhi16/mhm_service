@@ -339,7 +339,7 @@ content-type: application/json
     "member_doe": "2022-09-15",
     "member_priority": "Urgent",
 
-    "schoolId": "6144ed7d3a25d138702265a9"
+    "schoolId": "{{schoolId}}"
 }
 
 
@@ -360,7 +360,7 @@ content-type: application/json
     "member_doe": "2022-09-15",
     "member_priority": "Urgent",
 
-    "schoolId": "6144ed7d3a25d138702265a9"
+    "schoolId": "{{schoolId}}"
 }
 
 ### Delete SchoolBody Delete Info(Delete Page) ###
@@ -369,7 +369,7 @@ content-type: application/json
 
 {
     "_id": "63101f74512ba10f5781f688",    
-    "schoolId": "6144ed7d3a25d138702265a9"    
+    "schoolId": "{{schoolId}}"    
 }
 
 //----------------------- DbOption -------------------------------------
@@ -388,13 +388,13 @@ POST  https://mhm-services.herokuapp.com/api/schools/dboptions
 content-type: application/json
 
 {
-    "title": "MC Election",    
+    "title": "Mead Day Meal",    
     "img_url": "https://rawsolutions.org/img012145",
     "description":  "Football turnament will happen at our school ground.",    
-    "type": "Card",
+    "type": "Service",
     "priority": "Urgent",    
     "isActive": true,    
-    "schoolId": "6144ed7d3a25d138702265a9"
+    "schoolId": "{{schoolId}}"
 }
 
 
@@ -410,7 +410,7 @@ content-type: application/json
     "type": "Card",
     "priority": "Urgent",    
     "isActive": true,    
-    "schoolId": "630b06b6a199681c56d152d3"
+    "schoolId": "{{schoolId}}"
 }
 
 ### Delete DbOptions Delete Info(Delete Page) ###
@@ -419,7 +419,7 @@ content-type: application/json
 
 {
     "_id": "630f77b624e0c20f38da87cc",    
-    "schoolId": "6144ed7d3a25d138702265a9"    
+    "schoolId": "{{schoolId}}"    
 }
 
 
@@ -439,15 +439,15 @@ POST  https://mhm-services.herokuapp.com/api/schools/students
 content-type: application/json
 
 {
-    "firstname": "Gopal Ram",
+    "firstname": "Gopal ",
     "lastname": "Goswami",
 
     "fathername": "Dashrath Goswami",
     "mothername": "Kalpana Devi",
-    "email": "abcde2011@gmail.com",
+    "email": "student2022@gmail.com",
     "mobile": ["1234567899"],
 
-    "schoolId": "6144ed7d3a25d138702265a9",
+    "schoolId": "{{schoolId}}",
     "userId": "630e51ca1fd585799684a784"
 }
 
@@ -466,7 +466,7 @@ content-type: application/json
     "email": "abcde2010@gmail.com",
     "mobile": ["1234567890"],
 
-    "schoolId":"6144ed7d3a25d138702265a9",
+    "schoolId":"{{schoolId}}",
     "userId": "630e51ca1fd585799684a784"
 }
 
@@ -538,7 +538,7 @@ content-type: application/json
 
 //----------------------- DashboardOption -------------------------------------
 ### Get 1 Event Info(GET Page) ###
-GET  https://mhm-services.herokuapp.com/api/schools/dashboardoptions/630b06b6a199681c56d152d3
+GET  https://mhm-services.herokuapp.com/api/schools/dashboardoptions/{{schoolId}}
 content-type: application/json
 
 

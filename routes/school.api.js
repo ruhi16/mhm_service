@@ -25,9 +25,26 @@ const noticesRoute = require('../routes/notice.route');
 router.use('/notices', noticesRoute);
 
 
+
+// Class Apis
+const classesRoute = require('../routes/class.route');
+router.use('/classes', classesRoute);
+
+
+
+// Section Apis
+const sectionsRoute = require('../routes/section.route');
+router.use('/sections', sectionsRoute);
+
+
+
 // Student Apis
 const studentsRoute = require('../routes/students.route');
 router.use('/students', studentsRoute);
+
+// Student Cr Apis
+const studentcrsRoute = require('../routes/studentcr.route');
+router.use('/studentcrs', studentcrsRoute);
 
 
 
