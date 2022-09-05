@@ -2,6 +2,7 @@
 @REFRESH_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjIyNjYzMzUsImV4cCI6MTY5MzgyMzkzNSwiYXVkIjoiNjMxNDJiZGY1YTI2MGJmMTkyMzBlODZmIiwiaXNzIjoicmF3c29sdXRpb25zLmNvbSJ9.5xov1HiLK6kmUNQNZXJF4DfwZmaiO1BFOE2YN8dFzFo",
 
 "verify_url": "OduIVZf1cToO9xIaviZW
+@schoolId=6314f5aead42dfe0354ac304
 
 
 ### Live Root Page ###
@@ -31,9 +32,6 @@ content-type: application/json
     "description": "Current Session",
     
     "isActive": true
-    
-    
-    
 }
 
 ### Update Session Info(Put Page) ###
@@ -41,11 +39,11 @@ PUT  https://mhm-services.herokuapp.com/api/schools/sessions
 content-type: application/json
 
 {
-    "_id": "6314b02a994013b378a643db",
+    "_id": "6314f2cbad42dfe0354ac2fd",
     "session_title": "2022 updated",
     "session_img_url": "https://aaa",
     
-    "description": "Current Session",
+    "description": "Current new Session",
     
     "isActive": true,
     
@@ -58,7 +56,7 @@ DELETE  https://mhm-services.herokuapp.com/api/schools/sessions
 content-type: application/json
 
 {
-    "_id": "630ee5021774d6692d00c4b5",    
+    "_id": "6314f2cbad42dfe0354ac2fd",
     "schoolId": "630b06b6a199681c56d152d3"
     
 }
@@ -67,7 +65,7 @@ content-type: application/json
 
 //----------------------- School -------------------------------------
 ### Get 1 Schools Info(GET Page) ###
-GET  https://mhm-services.herokuapp.com/api/schools/self/630b06b6a199681c56d152d3
+GET  https://mhm-services.herokuapp.com/api/schools/self/{{schoolId}}
 content-type: application/json
 
 
@@ -80,13 +78,13 @@ POST  https://mhm-services.herokuapp.com/api/schools/self
 content-type: application/json
 
 {
-    "name":"Manikchak Abc High Madrasah(H.S)",
+    "name":"Manikchak High Madrasah(H.S)",
     "grade":"Higher Secondary",
     "schedule_time":"10:30 am to 04:30 pm",
     "email":"manikchakhm1921@gmail.com",    
     "mobile":"1234567890",
     
-    "sessionId": "6314b02a994013b378a643db",
+    "sessionId": "6314f2cbad42dfe0354ac2fd",
     "headmasterId": "6144ed7d3a25d138702265a9",
     "asstheadmasterId": "6144ed7d3a25d138702265a9"
 
@@ -97,7 +95,7 @@ PUT  https://mhm-services.herokuapp.com/api/schools/self
 content-type: application/json
 
 {
-    "_id": "6144ed7d3a25d138702265a9",
+    "_id": "6314de384411bed4c1f7d9ba",
     "name":"Manikchak High Madrasah(H.S)",
     "grade":"Higher Secondary",
     "schedule_time":"10:30 am to 04:30 pm",
@@ -115,8 +113,8 @@ DELETE  https://mhm-services.herokuapp.com/api/schools/self
 content-type: application/json
 
 {
-    "_id": "630b004582c10c39eb9c9c9f",    
-    "heasmasterId": "6144ed7d3a25d138702265a9"
+    "_id": "6314de384411bed4c1f7d9ba",    
+    "headmasterId": "6144ed7d3a25d138702265a9"
 }
 
 //----------------------- Notice -------------------------------------
@@ -135,7 +133,7 @@ POST  https://mhm-services.herokuapp.com/api/schools/notices
 content-type: application/json
 
 {
-    "noticeTitle": "This is second notice",
+    "noticeTitle": "This is first notice",
     "addr_to": "All Students",
     "ref_from": "Headmaster",
     "description": "This is description of first notice",
@@ -143,7 +141,8 @@ content-type: application/json
     "date_expr": "2022-08-31",
     "priority": "Urgent",    
     "isActive": true,
-    "schoolId": "630b004582c10c39eb9c9c9f",
+
+    "schoolId": "{{schoolId}}",
     "publ_by": "6144ed7d3a25d138702265a9",
     "publ_by_desig": "Headmaster"
 }
@@ -178,118 +177,6 @@ content-type: application/json
     "publ_by": "630b801aeb42f184ee428ec7"
 }
 
-//----------------------- Student -------------------------------------
-### Get 1 Student Info(GET Page) ###
-GET  https://mhm-services.herokuapp.com/api/schools/students/630e51ca1fd585799684a784
-content-type: application/json
-
-
-### Get All Students Info(GET Page) ###
-GET  https://mhm-services.herokuapp.com/api/schools/students
-content-type: application/json
-
-
-### New Student Add(Post Page) ###
-POST  https://mhm-services.herokuapp.com/api/schools/students
-content-type: application/json
-
-{
-    "firstname": "Gopal Ram",
-    "lastname": "Goswami",
-
-    "fathername": "Dashrath Goswami",
-    "mothername": "Kalpana Devi",
-    "email": "abcde2011@gmail.com",
-    "mobile": ["1234567899"],
-
-    "schoolId": "6144ed7d3a25d138702265a9",
-    "userId": "630e51ca1fd585799684a784"
-}
-
-
-### Update Student Update Info(Put Page) ###
-PUT  https://mhm-services.herokuapp.com/api/schools/students
-content-type: application/json
-
-{
-    "_id": "630e51ca1fd585799684a784",
-    "firstname": "Gopal Ram Chandra",
-    "lastname": "Goswami",
-
-    "fathername": "Dashrath Goswami",
-    "mothername": "Kalpana Devi",
-    "email": "abcde2010@gmail.com",
-    "mobile": ["1234567890"],
-
-    "schoolId":"6144ed7d3a25d138702265a9",
-    "userId": "630e51ca1fd585799684a784"
-}
-
-### Delete Student Delete Info(Delete Page) ###
-DELETE  https://mhm-services.herokuapp.com/api/schools/students
-content-type: application/json
-
-{
-    "_id": "630e52241fd585799684a789",    
-    "schoolId": "6144ed7d3a25d138702265a9",
-    "userId": "630e51ca1fd585799684a784"
-}
-
-
-//----------------------- Teacher -------------------------------------
-### Get 1 Teacher Info(GET Page) ###
-GET  https://mhm-services.herokuapp.com/api/schools/teachers/630e5cd56c1ba136fa1bd3ab
-content-type: application/json
-
-
-### Get All Teachers Info(GET Page) ###
-GET  https://mhm-services.herokuapp.com/api/schools/teachers
-content-type: application/json
-
-
-### New Teacher Add(Post Page) ###
-POST  https://mhm-services.herokuapp.com/api/schools/teachers
-content-type: application/json
-
-{
-    "firstname": "Samar",
-    "lastname": "Goswami",
-    
-    "email": "abcde2020@gmail.com",
-    "mobile": ["1234567899"],
-
-    "schoolId": "630b06b6a199681c56d152d3",
-    "userId": "630e51ca1fd585799684a784"
-}
-
-
-### Update Teacher Update Info(Put Page) ###
-PUT  https://mhm-services.herokuapp.com/api/schools/teachers
-content-type: application/json
-
-{
-    "_id": "630e5cc26c1ba136fa1bd3a7",
-    "firstname": "Gopal",
-    "lastname": "Goswami",
-
-    "email": "abcde2011@gmail.com",
-    "mobile": ["1234567890"],
-
-    "schoolId":"630b06b6a199681c56d152d3",
-    "userId": "630e51ca1fd585799684a784"
-}
-
-### Delete Teacher Delete Info(Delete Page) ###
-DELETE  https://mhm-services.herokuapp.com/api/schools/teachers
-content-type: application/json
-
-{
-    "_id": "630e5cd56c1ba136fa1bd3ab",    
-    "schoolId": "6144ed7d3a25d138702265a9",
-    "userId": "630e51ca1fd585799684a784"
-}
-
-
 //----------------------- Event -------------------------------------
 ### Get 1 Event Info(GET Page) ###
 GET  https://mhm-services.herokuapp.com/api/schools/events/630ec74fa703be6058aea22b
@@ -306,8 +193,8 @@ POST  https://mhm-services.herokuapp.com/api/schools/events
 content-type: application/json
 
 {
-    "event_title": "New Games Event",    
-    "description":  "Football turnament will happen at our school ground.",
+    "event_title": "Games Event",    
+    "description": "Football turnament will happen at our school ground.",
     
     "addr_to": "Regular Students",
     "ref_from": "Headmaster",
@@ -322,7 +209,7 @@ content-type: application/json
     "publ_by": "630e51ca1fd585799684a784",
     "publ_by_desig": "Headmaster",
     
-    "schoolId": "6144ed7d3a25d138702265a9"
+    "schoolId": "{{schoolId}}"
 }
 
 
@@ -381,17 +268,12 @@ content-type: application/json
     "img_title": "School New Image",    
     "img_url": "https://rawsolutons.com/image001002",
 
-    "description":  "Manikchak High Madrasah",    
-        
+    "description":  "Manikchak High Madrasah",
     "date_publ": "2022-09-05",
-    
     "priority": "Urgent",
-    
     "isActive": true,
-    
-    "publ_by": "630e51ca1fd585799684a784",    
-    
-    "schoolId": "6144ed7d3a25d138702265a9"    
+    "publ_by": "630e51ca1fd585799684a784",
+    "schoolId": "{{schoolId}}"    
 }
 
 
@@ -541,6 +423,116 @@ content-type: application/json
 }
 
 
+//----------------------- Student -------------------------------------
+### Get 1 Student Info(GET Page) ###
+GET  https://mhm-services.herokuapp.com/api/schools/students/630e51ca1fd585799684a784
+content-type: application/json
+
+
+### Get All Students Info(GET Page) ###
+GET  https://mhm-services.herokuapp.com/api/schools/students
+content-type: application/json
+
+
+### New Student Add(Post Page) ###
+POST  https://mhm-services.herokuapp.com/api/schools/students
+content-type: application/json
+
+{
+    "firstname": "Gopal Ram",
+    "lastname": "Goswami",
+
+    "fathername": "Dashrath Goswami",
+    "mothername": "Kalpana Devi",
+    "email": "abcde2011@gmail.com",
+    "mobile": ["1234567899"],
+
+    "schoolId": "6144ed7d3a25d138702265a9",
+    "userId": "630e51ca1fd585799684a784"
+}
+
+
+### Update Student Update Info(Put Page) ###
+PUT  https://mhm-services.herokuapp.com/api/schools/students
+content-type: application/json
+
+{
+    "_id": "630e51ca1fd585799684a784",
+    "firstname": "Gopal Ram Chandra",
+    "lastname": "Goswami",
+
+    "fathername": "Dashrath Goswami",
+    "mothername": "Kalpana Devi",
+    "email": "abcde2010@gmail.com",
+    "mobile": ["1234567890"],
+
+    "schoolId":"6144ed7d3a25d138702265a9",
+    "userId": "630e51ca1fd585799684a784"
+}
+
+### Delete Student Delete Info(Delete Page) ###
+DELETE  https://mhm-services.herokuapp.com/api/schools/students
+content-type: application/json
+
+{
+    "_id": "630e52241fd585799684a789",    
+    "schoolId": "6144ed7d3a25d138702265a9",
+    "userId": "630e51ca1fd585799684a784"
+}
+
+
+//----------------------- Teacher -------------------------------------
+### Get 1 Teacher Info(GET Page) ###
+GET  https://mhm-services.herokuapp.com/api/schools/teachers/630e5cd56c1ba136fa1bd3ab
+content-type: application/json
+
+
+### Get All Teachers Info(GET Page) ###
+GET  https://mhm-services.herokuapp.com/api/schools/teachers
+content-type: application/json
+
+
+### New Teacher Add(Post Page) ###
+POST  https://mhm-services.herokuapp.com/api/schools/teachers
+content-type: application/json
+
+{
+    "firstname": "Samar",
+    "lastname": "Goswami",
+    
+    "email": "abcde2020@gmail.com",
+    "mobile": ["1234567899"],
+
+    "schoolId": "630b06b6a199681c56d152d3",
+    "userId": "630e51ca1fd585799684a784"
+}
+
+
+### Update Teacher Update Info(Put Page) ###
+PUT  https://mhm-services.herokuapp.com/api/schools/teachers
+content-type: application/json
+
+{
+    "_id": "630e5cc26c1ba136fa1bd3a7",
+    "firstname": "Gopal",
+    "lastname": "Goswami",
+
+    "email": "abcde2011@gmail.com",
+    "mobile": ["1234567890"],
+
+    "schoolId":"630b06b6a199681c56d152d3",
+    "userId": "630e51ca1fd585799684a784"
+}
+
+### Delete Teacher Delete Info(Delete Page) ###
+DELETE  https://mhm-services.herokuapp.com/api/schools/teachers
+content-type: application/json
+
+{
+    "_id": "630e5cd56c1ba136fa1bd3ab",    
+    "schoolId": "6144ed7d3a25d138702265a9",
+    "userId": "630e51ca1fd585799684a784"
+}
 
 
 

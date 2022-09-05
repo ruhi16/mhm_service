@@ -12,7 +12,7 @@ const galarySchema = new mongoose.Schema({
     isActive: {type: Boolean, required: true},
 
     publ_by: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}, 
-    publ_by_desig: {type: String, required: true},
+    // publ_by_desig: {type: String, required: true},
 
     schoolId: {type: mongoose.Schema.Types.ObjectId, ref: 'School'},
     // userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
