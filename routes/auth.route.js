@@ -6,10 +6,10 @@ const nodemailer = require('nodemailer');
 const User = require('../models/user.model');
 
 const { signAccessToken, signRefreshToken, verifyAccessToken } = require('../utils/jwt_actions');
-const { registerSchema, updateSchema, deleteSchema, loginSchema, } = require('../utils/validaton_schema');
+const { registerSchema, updateSchema, deleteSchema, loginSchema, forgotPasswordSchema, resetPasswordSchema } = require('../utils/validaton_schema');
 
 
-const {sendEmail} = require('../utils/email_actions');
+const {sendEmail, sendEmailForForgotPassword} = require('../utils/email_actions');
 
 
 
@@ -171,6 +171,71 @@ router.post('/login', async (req, res, next) => {
         res.send({
             user: savedUser,
             payload: req.payload,
+        });
+
+    }catch(error){
+        if(error.isJoi === true){
+            error.status = 422;
+        }
+        next(error);
+    }
+});
+
+
+router.post('/forgot_password', async (req, res, next) => {
+    try{
+        // console.log(req.body);
+        // const user = await User.findOne({verify_url: req.params.verify_url});
+        const result = await forgotPasswordSchema.validateAsync(req.body);
+
+        // console.log(result);
+        const user = await User.findOne({email: result.email});
+        if(!user){
+            throw createError.Conflict(`This email '${result.email}' is not registered.`);
+        }            
+        
+        user.verify_url = makeRandomString(20);
+        const savedUser = await user.save();
+
+        // Email Send options
+        sendEmailForForgotPassword(savedUser._id); 
+
+        res.send({
+            // user: savedUser,
+            status: 200,
+            reset_password_id: user.verify_url,
+            message: 'Reset password link has been sent to your registered email, please check your inbox.',
+        });
+
+    }catch(error){
+        if(error.isJoi === true){
+            error.status = 422;
+        }
+        next(error);
+    }
+});
+
+
+
+
+router.post('/reset_password', async (req, res, next) => {
+    try{
+        // console.log(req.body);
+        // const user = await User.findOne({verify_url: req.params.verify_url});
+        const result = await resetPasswordSchema.validateAsync(req.body);
+
+        // console.log(result);
+        const user = await User.findOne({verify_url: result.reset_password_id});
+        if(!user){
+            throw createError.Conflict(`This email '${result.email}' or reset_password_id is not registered.`);
+        }            
+        
+        user.verify_url = '';
+        const savedUser = await user.save();
+
+        res.send({            
+            status: 200,
+            message: 'Password has been changed successfully, now you can login.',
         });
 
     }catch(error){

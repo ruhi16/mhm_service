@@ -497,13 +497,13 @@ POST  https://mhm-services.herokuapp.com/api/schools/teachers
 content-type: application/json
 
 {
-    "firstname": "Samar",
-    "lastname": "Goswami",
+    "firstname": "Arnab",
+    "lastname": "Das",
     
-    "email": "abcde2020@gmail.com",
+    "email": "teacher06@gmail.com",
     "mobile": ["1234567899"],
 
-    "schoolId": "630b06b6a199681c56d152d3",
+    "schoolId": "{{schoolId}}",
     "userId": "630e51ca1fd585799684a784"
 }
 

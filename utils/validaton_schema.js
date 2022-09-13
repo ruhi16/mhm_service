@@ -26,6 +26,17 @@ const loginSchema = Joi.object({
 });
 
 
+const forgotPasswordSchema = Joi.object({    
+    email: Joi.string().email().lowercase().required(),    
+});
+
+const resetPasswordSchema = Joi.object({        
+    email: Joi.string().email().lowercase().required(),
+    reset_password_id: Joi.string().min(20).required(),
+    password: Joi.string().min(2).required(),
+});
+
+
 const ambulanceSchema = Joi.object({    
     inst_name: Joi.string().required(), 
     car_type: Joi.string().required(),
@@ -55,6 +66,8 @@ module.exports = {
     updateSchema, 
     deleteSchema, 
     loginSchema, 
+    forgotPasswordSchema,
+    resetPasswordSchema,
     ambulanceSchema, 
     addressSchema 
 };

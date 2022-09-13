@@ -35,7 +35,45 @@ module.exports = {
             if(err){
                 console.log('Error occured in email send: '+err);
             }else{
-                console.log('Email sent successfully: '+info.response);
+                console.log('Email sent successfully to verify email: '+info.response);
+            }
+        });
+    },
+
+    sendEmailForForgotPassword: async (u_id) => {
+
+        const currUser = await User.findById(u_id);
+        if(!currUser){
+            throw createError.Conflict(`This user email '${currUser.email}' not exists.`);
+        }
+        // console.log('req:'+ currUser);
+
+        var transporter = nodemailer.createTransport({
+            host: "smtp.mailtrap.io",
+            port: 2525,
+            auth: {
+            user: "493833c29fc569",
+            pass: "9df19a2f7aefba"
+            }
+        });
+
+        let mailOptions = {
+            from: process.env.BASE_EMAIL_ID,
+            to: currUser.email,
+            subject: 'Requested for password reset link.',
+            html: `<h1>Click Here to set new password and confirm it</h1><Br/>
+                    <a href='http://localhost:3000/api/reset_password/${currUser.verify_url}'>Click to set new password</a>`,
+
+            text: `Hello ${currUser.firstname}, This is your link for set new password: 
+                    <a href='http://localhost:3000/api/reset_password/${currUser.verify_url} requested.`
+                        
+        };
+
+        transporter.sendMail(mailOptions, function(err, info){
+            if(err){
+                console.log('Error occured in email send: '+err);
+            }else{
+                console.log('Email sent successfully to reset password: '+info.response);
             }
         });
     },

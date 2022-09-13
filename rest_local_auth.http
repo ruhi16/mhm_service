@@ -1,0 +1,336 @@
+@ACCESS_TOKEN=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjI5NDc0NTQsImV4cCI6MTY2MzAzMzg1NCwiYXVkIjoiNjMwMDVlNjMyNjM2YjlmZTFiNTMwNDdmIiwiaXNzIjoicmF3c29sdXRpb25zLmNvbSJ9.hm7je-n0RE7UrmB0O4MGh9QFI0Mc4_tYynvxXoW3-ZU
+
+@REFRESH_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjI5NDc0NTQsImV4cCI6MTY5NDUwNTA1NCwiYXVkIjoiNjMwMDVlNjMyNjM2YjlmZTFiNTMwNDdmIiwiaXNzIjoicmF3c29sdXRpb25zLmNvbSJ9.qJb8CGE98ibNbtOC5rtjtntbsYXb2Noq2Spa6QjYZtE
+
+@schoolId=630b06b6a199681c56d152d3
+@sessionId=630ee5151774d6692d00c4b8
+
+
+### Root Page ###
+GET http://localhost:3000/api/users
+content-type: application/json,
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+### Register Page ###
+POST  http://localhost:3000/api/users/register
+content-type: application/json
+
+{
+    "firstname":"Ayantika",
+    "lastname":"Das",
+    "email":"hndas2022@gmail.com",
+    "password":"ab"
+}
+
+
+
+
+### Login Page ###
+POST  http://localhost:3000/api/users/login
+content-type: application/json
+
+{    
+    "email":"hndas2022@gmail.com",
+    "password":"ab"
+}
+
+### Forgot Password Page ###
+POST  http://localhost:3000/api/users/forgot_password
+content-type: application/json
+
+{    
+    "email":"hndas2022@gmail.com"    
+}
+
+### Reset Password POST Page ###
+POST  http://localhost:3000/api/users/reset_password
+content-type: application/json
+
+{  
+    "email":"hndas2022@gmail.com", 
+    "reset_password_id":"7zrStX3Nerof8R6JHXk5",
+    "password":"abcd"    
+}
+
+### Verify Url Page ###
+GET  http://localhost:3000/api/users/Vd3coLF9JFXjYHJgYyY4
+content-type: application/json
+
+
+### Is_Verified Email Url (After Login, with AccTok) ###
+GET  http://localhost:3000/api/users/is_verify_email_url
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+### Verify Url only ###
+GET  http://localhost:3000/api/users/self/9MsapikmTQYVXKyKcW4C
+content-type: application/json
+
+
+
+
+
+
+### User's Dashboard
+GET http://localhost:3000/api/users
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+### Update Page ###
+PUT http://localhost:3000/api/users/update
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{
+    "_id": "63005e632636b9fe1b53047f",
+    "firstname": "Ayantika Hari Narayan",
+    "lastname": "Das"
+}
+
+### Delete User ###
+DELETE http://localhost:3000/api/users/delete
+content-type: application/json
+
+{
+    "_id": "6144ed7d3a25d138702265a9"
+    
+}
+
+
+
+
+
+
+
+
+
+### Only Logged In & Authenticated User 
+GET http://localhost:3000/api/users
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+
+
+
+### All Users List original
+GET http://localhost:3000/api/users/allalong
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+
+### All Users List
+GET http://localhost:3000/api/users/613273513aae8b05281b70dd
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+### Address New
+POST http://localhost:3000/api/address
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{
+    "pin": "742123",
+    "ps": "Azimganj",
+    "po": "Jiaganj",
+    "dist": "Murshidabad",
+    "state": "WestBengal"
+}
+
+
+### Ambulance New
+POST http://localhost:3000/api/ambulance
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{
+    "inst_name": "Jiaganj Sanjeevani",
+    "car_type": "Normal",
+    "car_model": "Maruti Omni",
+    "car_no": "WB58 AQ 5421",    
+    "base_addr_id": "612fd8129f3f2809ac6d2c3e",
+    "dest_addr_id": ["612fd8129f3f2809ac6d2c3e","612fd8129f3f2809ac6d2c3e"],
+    "services": ["AC","Oxygen"]
+}
+
+
+
+
+
+
+
+
+
+
+### Test Only: Show all addresses
+GET http://localhost:3000/api/address
+content-type: application/json
+
+
+### Show All Address
+http://amb-service.herokuapp.com/api/address
+content-type: application/json
+
+
+
+
+
+
+
+
+
+### Test Only
+GET http://amb-service.herokuapp.com/
+content-type: application/json
+
+
+
+
+
+
+
+
+
+
+
+### Home Page ###
+GET http://localhost:3000/ping
+content-type: application/json,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### User's Dashboard
+GET http://localhost:3000/api/users
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+
+
+
+
+
+
+### Registered User's OTP Verification
+POST http://localhost:3000/api/users/OTP_vefiry
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{
+    "otp":"2412" 
+}
+
+
+
+
+
+### Registered User's OTP Resend
+GET http://localhost:3000/api/users/OTP_resend
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### User's New Post
+POST http://localhost:3000/api/users/post
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{       
+    "caption":"this is my caption",
+    "img_link":"https://pixcel.com"
+}
+
+
+
+### User's New Comment on any post
+POST http://localhost:3000/api/users/post/comment
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+{    
+    "post_id":"5fa2e9bf52d4601444c6e1dd",
+    "comment_text":"this is my comment on any post"    
+}
+
+
+
+
+
+
+### User's Logout
+POST http://localhost:3000/api/logout
+content-type: application/json,
+authorization: {{ACCESS_TOKEN}} 
+
+{
+    "refresh_token": ""
+}
+
+
+
+
+
+
+
+### New Request ###
+GET http://localhost:3000/unknown
+
+
+
+
+
+
+### All Clubs
+GET http://localhost:3000/api/clubs
+
+
+
+
+### All Clubs
+POST http://localhost:3000/api/clubs/register
+content-type: application/json
+
+{
+
+}
