@@ -12,16 +12,16 @@ https://amb-service.herokuapp.com
 //======================= school apis =====================================
 //----------------------- Session -------------------------------------
 ### Get 1 Session Info(GET Page) ###
-GET  http://localhost:3000/api/schools/sessions/630ee5021774d6692d00c4b5
+GET  http://localhost:5000/api/schools/sessions/630ee5021774d6692d00c4b5
 content-type: application/json
 
 
 ### Get All Sessions Info(GET Page) ###
-GET  http://localhost:3000/api/schools/sessions
+GET  http://localhost:5000/api/schools/sessions
 content-type: application/json
 
 ### New session Add(Post Page) ###
-POST  http://localhost:3000/api/schools/sessions
+POST  http://localhost:5000/api/schools/sessions
 content-type: application/json
 
 {
@@ -33,7 +33,7 @@ content-type: application/json
 }
 
 ### Update Session Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/sessions
+PUT  http://localhost:5000/api/schools/sessions
 content-type: application/json
 
 {
@@ -50,7 +50,7 @@ content-type: application/json
 }
 
 ### Delete Session Info(Put Page) ###
-DELETE  http://localhost:3000/api/schools/sessions
+DELETE  http://localhost:5000/api/schools/sessions
 content-type: application/json
 
 {
@@ -63,16 +63,16 @@ content-type: application/json
 
 //----------------------- School -------------------------------------
 ### Get 1 Schools Info(GET Page) ###
-GET  http://localhost:3000/api/schools/self/630b06b6a199681c56d152d3
+GET  http://localhost:5000/api/schools/self/630b06b6a199681c56d152d3
 content-type: application/json
 
 
 ### Get All Schools Info(GET Page) ###
-GET  http://localhost:3000/api/schools/self
+GET  http://localhost:5000/api/schools/self
 content-type: application/json
 
 ### New School Add(Post Page) ###
-POST  http://localhost:3000/api/schools/self
+POST  http://localhost:5000/api/schools/self
 content-type: application/json
 
 {
@@ -89,7 +89,7 @@ content-type: application/json
 }
 
 ### Update School Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/self
+PUT  http://localhost:5000/api/schools/self
 content-type: application/json
 
 {
@@ -107,7 +107,7 @@ content-type: application/json
 }
 
 ### Delete School Info(Put Page) ###
-DELETE  http://localhost:3000/api/schools/self
+DELETE  http://localhost:5000/api/schools/self
 content-type: application/json
 
 {
@@ -117,17 +117,17 @@ content-type: application/json
 
 //----------------------- Notice -------------------------------------
 ### Get 1 Notice Info(GET Page) ###
-GET  http://localhost:3000/api/schools/notices/630b7ff2eb42f184ee428ec3
+GET  http://localhost:5000/api/schools/notices/630b7ff2eb42f184ee428ec3
 content-type: application/json
 
 
 ### Get All Notices Info(GET Page) ###
-GET  http://localhost:3000/api/schools/notices
+GET  http://localhost:5000/api/schools/notices
 content-type: application/json
 
 
 ### New Notice Add(Post Page) ###
-POST  http://localhost:3000/api/schools/notices
+POST  http://localhost:5000/api/schools/notices
 content-type: application/json
 
 {
@@ -146,7 +146,7 @@ content-type: application/json
 
 
 ### Update Notice Update Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/notices
+PUT  http://localhost:5000/api/schools/notices
 content-type: application/json
 
 {
@@ -165,7 +165,7 @@ content-type: application/json
 }
 
 ### Delete Notice Delete Info(Delete Page) ###
-DELETE  http://localhost:3000/api/schools/notices
+DELETE  http://localhost:5000/api/schools/notices
 content-type: application/json
 
 {
@@ -176,17 +176,17 @@ content-type: application/json
 
 //----------------------- Student -------------------------------------
 ### Get 1 Student Info(GET Page) ###
-GET  http://localhost:3000/api/schools/students/630e51ca1fd585799684a784
+GET  http://localhost:5000/api/schools/students/630e51ca1fd585799684a784
 content-type: application/json
 
 
 ### Get All Students Info(GET Page) ###
-GET  http://localhost:3000/api/schools/students
+GET  http://localhost:5000/api/schools/students
 content-type: application/json
 
 
 ### New Student Add(Post Page) ###
-POST  http://localhost:3000/api/schools/students
+POST  http://localhost:5000/api/schools/students
 content-type: application/json
 
 {
@@ -204,7 +204,7 @@ content-type: application/json
 
 
 ### Update Student Update Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/students
+PUT  http://localhost:5000/api/schools/students
 content-type: application/json
 
 {
@@ -222,7 +222,7 @@ content-type: application/json
 }
 
 ### Delete Student Delete Info(Delete Page) ###
-DELETE  http://localhost:3000/api/schools/students
+DELETE  http://localhost:5000/api/schools/students
 content-type: application/json
 
 {
@@ -234,17 +234,17 @@ content-type: application/json
 
 //----------------------- Student Cr -------------------------------------
 ### Get 1 Student cr Info(GET Page) ###
-GET  http://localhost:3000/api/schools/studentcrs/6315aa5162b0b045cfab64c2
+GET  http://localhost:5000/api/schools/studentcrs/6315aa5162b0b045cfab64c2
 content-type: application/json
 
 
 ### Get All Students cr Info(GET Page) ###
-GET  http://localhost:3000/api/schools/studentcrs
+GET  http://localhost:5000/api/schools/studentcrs
 content-type: application/json
 
 
 ### New Student cr Add(Post Page) ###
-POST  http://localhost:3000/api/schools/studentcrs
+POST  http://localhost:5000/api/schools/studentcrs
 content-type: application/json
 
 {
@@ -260,7 +260,7 @@ content-type: application/json
 
 
 ### Update Student cr Update Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/studentcrs
+PUT  http://localhost:5000/api/schools/studentcrs
 content-type: application/json
 
 {
@@ -275,7 +275,7 @@ content-type: application/json
 }
 
 ### Delete Student cr Delete Info(Delete Page) ###
-DELETE  http://localhost:3000/api/schools/studentcrs
+DELETE  http://localhost:5000/api/schools/studentcrs
 content-type: application/json
 
 {
@@ -287,17 +287,17 @@ content-type: application/json
 
 //----------------------- Classes -------------------------------------
 ### Get 1 Class Info(GET Page) ###
-GET  http://localhost:3000/api/schools/classes/6315aa5162b0b045cfab64c2
+GET  http://localhost:5000/api/schools/classes/6315aa5162b0b045cfab64c2
 content-type: application/json
 
 
 ### Get All Class Info(GET Page) ###
-GET  http://localhost:3000/api/schools/classes
+GET  http://localhost:5000/api/schools/classes
 content-type: application/json
 
 
 ### New Class Add(Post Page) ###
-POST  http://localhost:3000/api/schools/classes
+POST  http://localhost:5000/api/schools/classes
 content-type: application/json
 
 {
@@ -319,7 +319,7 @@ content-type: application/json
 
 
 ### Update Class Update Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/classes
+PUT  http://localhost:5000/api/schools/classes
 content-type: application/json
 
 {
@@ -342,7 +342,7 @@ content-type: application/json
 }
 
 ### Delete Class Delete Info(Delete Page) ###
-DELETE  http://localhost:3000/api/schools/classes
+DELETE  http://localhost:5000/api/schools/classes
 content-type: application/json
 
 {
@@ -357,17 +357,17 @@ content-type: application/json
 
 //----------------------- Section -------------------------------------
 ### Get 1 Section Info(GET Page) ###
-GET  http://localhost:3000/api/schools/sections/6315aa5162b0b045cfab64c2
+GET  http://localhost:5000/api/schools/sections/6315aa5162b0b045cfab64c2
 content-type: application/json
 
 
 ### Get All Section Info(GET Page) ###
-GET  http://localhost:3000/api/schools/sections
+GET  http://localhost:5000/api/schools/sections
 content-type: application/json
 
 
 ### New Section Add(Post Page) ###
-POST  http://localhost:3000/api/schools/sections
+POST  http://localhost:5000/api/schools/sections
 content-type: application/json
 
 {
@@ -381,7 +381,7 @@ content-type: application/json
 
 
 ### Update Section Update Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/sections
+PUT  http://localhost:5000/api/schools/sections
 content-type: application/json
 
 {
@@ -395,7 +395,7 @@ content-type: application/json
 }
 
 ### Delete Section Delete Info(Delete Page) ###
-DELETE  http://localhost:3000/api/schools/sections
+DELETE  http://localhost:5000/api/schools/sections
 content-type: application/json
 
 {
@@ -408,17 +408,17 @@ content-type: application/json
 
 //----------------------- Teacher -------------------------------------
 ### Get 1 Teacher Info(GET Page) ###
-GET  http://localhost:3000/api/schools/teachers/630e5cd56c1ba136fa1bd3ab
+GET  http://localhost:5000/api/schools/teachers/630e5cd56c1ba136fa1bd3ab
 content-type: application/json
 
 
 ### Get All Teachers Info(GET Page) ###
-GET  http://localhost:3000/api/schools/teachers
+GET  http://localhost:5000/api/schools/teachers
 content-type: application/json
 
 
 ### New Teacher Add(Post Page) ###
-POST  http://localhost:3000/api/schools/teachers
+POST  http://localhost:5000/api/schools/teachers
 content-type: application/json
 
 {
@@ -434,7 +434,7 @@ content-type: application/json
 
 
 ### Update Teacher Update Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/teachers
+PUT  http://localhost:5000/api/schools/teachers
 content-type: application/json
 
 {
@@ -450,7 +450,7 @@ content-type: application/json
 }
 
 ### Delete Teacher Delete Info(Delete Page) ###
-DELETE  http://localhost:3000/api/schools/teachers
+DELETE  http://localhost:5000/api/schools/teachers
 content-type: application/json
 
 {
@@ -462,17 +462,17 @@ content-type: application/json
 
 //----------------------- Event -------------------------------------
 ### Get 1 Event Info(GET Page) ###
-GET  http://localhost:3000/api/schools/events/630ec74fa703be6058aea22b
+GET  http://localhost:5000/api/schools/events/630ec74fa703be6058aea22b
 content-type: application/json
 
 
 ### Get All events Info(GET Page) ###
-GET  http://localhost:3000/api/schools/events
+GET  http://localhost:5000/api/schools/events
 content-type: application/json
 
 
 ### New Event Add(Post Page) ###
-POST  http://localhost:3000/api/schools/events
+POST  http://localhost:5000/api/schools/events
 content-type: application/json
 
 {
@@ -497,7 +497,7 @@ content-type: application/json
 
 
 ### Update Event Update Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/events
+PUT  http://localhost:5000/api/schools/events
 content-type: application/json
 
 {
@@ -522,7 +522,7 @@ content-type: application/json
 }
 
 ### Delete Event Delete Info(Delete Page) ###
-DELETE  http://localhost:3000/api/schools/events
+DELETE  http://localhost:5000/api/schools/events
 content-type: application/json
 
 {
@@ -534,17 +534,17 @@ content-type: application/json
 
 //----------------------- Galary -------------------------------------
 ### Get 1 Galary Info(GET Page) ###
-GET  http://localhost:3000/api/schools/galarys/630ecf13319cfb0fa374891b
+GET  http://localhost:5000/api/schools/galarys/630ecf13319cfb0fa374891b
 content-type: application/json
 
 
 ### Get All Galarys Info(GET Page) ###
-GET  http://localhost:3000/api/schools/galarys
+GET  http://localhost:5000/api/schools/galarys
 content-type: application/json
 
 
 ### New Galary Add(Post Page) ###
-POST  http://localhost:3000/api/schools/galarys
+POST  http://localhost:5000/api/schools/galarys
 content-type: application/json
 
 {
@@ -566,7 +566,7 @@ content-type: application/json
 
 
 ### Update Galary Update Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/galarys
+PUT  http://localhost:5000/api/schools/galarys
 content-type: application/json
 
 {
@@ -590,7 +590,7 @@ content-type: application/json
 }
 
 ### Delete Galary Delete Info(Delete Page) ###
-DELETE  http://localhost:3000/api/schools/galarys
+DELETE  http://localhost:5000/api/schools/galarys
 content-type: application/json
 
 {
@@ -602,17 +602,17 @@ content-type: application/json
 
 //----------------------- School Body  -------------------------------------
 ### Get 1 SchoolBody Info(GET Page) ###
-GET  http://localhost:3000/api/schools/schoolbodys/63101f74512ba10f5781f688
+GET  http://localhost:5000/api/schools/schoolbodys/63101f74512ba10f5781f688
 content-type: application/json
 
 
 ### Get All SchoolBodys Info(GET Page) ###
-GET  http://localhost:3000/api/schools/schoolbodys
+GET  http://localhost:5000/api/schools/schoolbodys
 content-type: application/json
 
 
 ### New SchoolBody Add(Post Page) ###
-POST  http://localhost:3000/api/schools/schoolbodys
+POST  http://localhost:5000/api/schools/schoolbodys
 content-type: application/json
 
 {
@@ -632,7 +632,7 @@ content-type: application/json
 
 
 ### Update SchoolBody Update Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/schoolbodys
+PUT  http://localhost:5000/api/schools/schoolbodys
 content-type: application/json
 
 {
@@ -652,7 +652,7 @@ content-type: application/json
 }
 
 ### Delete SchoolBody Delete Info(Delete Page) ###
-DELETE  http://localhost:3000/api/schools/schoolbodys
+DELETE  http://localhost:5000/api/schools/schoolbodys
 content-type: application/json
 
 {
@@ -662,17 +662,17 @@ content-type: application/json
 
 //----------------------- DbOption -------------------------------------
 ### Get 1 Event Info(GET Page) ###
-GET  http://localhost:3000/api/schools/dboptions/630f77b624e0c20f38da87cc
+GET  http://localhost:5000/api/schools/dboptions/630f77b624e0c20f38da87cc
 content-type: application/json
 
 
 ### Get All DbOptions Info(GET Page) ###
-GET  http://localhost:3000/api/schools/dboptions
+GET  http://localhost:5000/api/schools/dboptions
 content-type: application/json
 
 
 ### New DbOptions Add(Post Page) ###
-POST  http://localhost:3000/api/schools/dboptions
+POST  http://localhost:5000/api/schools/dboptions
 content-type: application/json
 
 {
@@ -687,7 +687,7 @@ content-type: application/json
 
 
 ### Update DbOptions Update Info(Put Page) ###
-PUT  http://localhost:3000/api/schools/dboptions
+PUT  http://localhost:5000/api/schools/dboptions
 content-type: application/json
 
 {
@@ -702,7 +702,7 @@ content-type: application/json
 }
 
 ### Delete DbOptions Delete Info(Delete Page) ###
-DELETE  http://localhost:3000/api/schools/dboptions
+DELETE  http://localhost:5000/api/schools/dboptions
 content-type: application/json
 
 {
@@ -716,7 +716,7 @@ content-type: application/json
 
 //----------------------- DashboardOption -------------------------------------
 ### Get 1 Event Info(GET Page) ###
-GET  http://localhost:3000/api/schools/dashboardoptions/630b06b6a199681c56d152d3
+GET  http://localhost:5000/api/schools/dashboardoptions/630b06b6a199681c56d152d3
 content-type: application/json
 
 
@@ -764,14 +764,14 @@ content-type: application/json
 
 
 ### Root Page ###
-GET http://localhost:3000/
+GET http://localhost:5000/
 content-type: application/json,
 
 
 
 
 ### Register Page ###
-POST  http://localhost:3000/api/users/register
+POST  http://localhost:5000/api/users/register
 content-type: application/json
 
 {
@@ -791,7 +791,7 @@ content-type: application/json
 
 
 ### Verify Url Page ###
-GET  http://localhost:3000/api/users/Vd3coLF9JFXjYHJgYyY4
+GET  http://localhost:5000/api/users/Vd3coLF9JFXjYHJgYyY4
 content-type: application/json
 
 
@@ -804,7 +804,7 @@ content-type: application/json
 
 
 ### Is_Verified Email Url (After Login, with AccTok) ###
-GET  http://localhost:3000/api/users/is_verify_email_url
+GET  http://localhost:5000/api/users/is_verify_email_url
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -817,7 +817,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Verify Url only ###
-GET  http://localhost:3000/api/users/self/9MsapikmTQYVXKyKcW4C
+GET  http://localhost:5000/api/users/self/9MsapikmTQYVXKyKcW4C
 content-type: application/json
 
 
@@ -830,7 +830,7 @@ content-type: application/json
 
 
 ### Login Page ###
-POST  http://localhost:3000/api/users/login
+POST  http://localhost:5000/api/users/login
 content-type: application/json
 
 {    
@@ -844,7 +844,7 @@ content-type: application/json
 
 
 ### Update Page ###
-PUT http://localhost:3000/api/users/update
+PUT http://localhost:5000/api/users/update
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -862,7 +862,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Delete User ###
-DELETE http://localhost:3000/api/users/delete
+DELETE http://localhost:5000/api/users/delete
 content-type: application/json
 
 {
@@ -877,7 +877,7 @@ content-type: application/json
 
 
 ### User's Dashboard
-GET http://localhost:3000/api/users
+GET http://localhost:5000/api/users
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -891,7 +891,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Only Logged In & Authenticated User 
-GET http://localhost:3000/api/users
+GET http://localhost:5000/api/users
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -902,7 +902,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### All Users List original
-GET http://localhost:3000/api/users/allalong
+GET http://localhost:5000/api/users/allalong
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -911,13 +911,13 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### All Users List
-GET http://localhost:3000/api/users/613273513aae8b05281b70dd
+GET http://localhost:5000/api/users/613273513aae8b05281b70dd
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
 
 ### Address New
-POST http://localhost:3000/api/address
+POST http://localhost:5000/api/address
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -931,7 +931,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Ambulance New
-POST http://localhost:3000/api/ambulance
+POST http://localhost:5000/api/ambulance
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -955,7 +955,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Test Only: Show all addresses
-GET http://localhost:3000/api/address
+GET http://localhost:5000/api/address
 content-type: application/json
 
 
@@ -986,7 +986,7 @@ content-type: application/json
 
 
 ### Home Page ###
-GET http://localhost:3000/ping
+GET http://localhost:5000/ping
 content-type: application/json,
 
 
@@ -1008,7 +1008,7 @@ content-type: application/json,
 
 
 ### User's Dashboard
-GET http://localhost:3000/api/users
+GET http://localhost:5000/api/users
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -1022,7 +1022,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Registered User's OTP Verification
-POST http://localhost:3000/api/users/OTP_vefiry
+POST http://localhost:5000/api/users/OTP_vefiry
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -1035,7 +1035,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Registered User's OTP Resend
-GET http://localhost:3000/api/users/OTP_resend
+GET http://localhost:5000/api/users/OTP_resend
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -1053,7 +1053,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### User's New Post
-POST http://localhost:3000/api/users/post
+POST http://localhost:5000/api/users/post
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -1065,7 +1065,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### User's New Comment on any post
-POST http://localhost:3000/api/users/post/comment
+POST http://localhost:5000/api/users/post/comment
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -1080,7 +1080,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### User's Logout
-POST http://localhost:3000/api/logout
+POST http://localhost:5000/api/logout
 content-type: application/json,
 authorization: {{ACCESS_TOKEN}} 
 
@@ -1095,7 +1095,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### New Request ###
-GET http://localhost:3000/unknown
+GET http://localhost:5000/unknown
 
 
 
@@ -1103,13 +1103,13 @@ GET http://localhost:3000/unknown
 
 
 ### All Clubs
-GET http://localhost:3000/api/clubs
+GET http://localhost:5000/api/clubs
 
 
 
 
 ### All Clubs
-POST http://localhost:3000/api/clubs/register
+POST http://localhost:5000/api/clubs/register
 content-type: application/json
 
 {

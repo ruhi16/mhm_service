@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 
 // const User = require('../models/user.model');
 
-const Studentcr = require('../models/studebtcr.model');
+const Studentcr = require('../models/studentcr.model');
 
 
 
