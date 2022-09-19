@@ -39,11 +39,20 @@ const sessionDeleteSchema = Joi.object({
 
 const schoolRegisterSchema = Joi.object({    
     name: Joi.string().min(3).max(60).required(),
+    dise: Joi.string().min(0).max(11),
     grade: Joi.string().min(3).max(30).required(),
     schedule_time: Joi.string().min(3).max(30).required(),
 
     email: Joi.string().email().lowercase().required(),
-    mobile: Joi.string().max(10).required(),
+    mobile: Joi.array().items(Joi.string().max(10).required()),
+
+    vill: Joi.string().min(0).max(11),
+    post: Joi.string().min(0).max(11),
+    ps: Joi.string().min(0).max(11),
+    pin: Joi.string().min(0).max(11),
+    dist: Joi.string().min(0).max(11),
+
+    imgurl: Joi.array().items(Joi.string().min(3).max(100)),
 
     // userId: Joi.objectId(),
     sessionId: Joi.objectId(),

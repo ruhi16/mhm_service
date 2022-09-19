@@ -79,12 +79,21 @@ content-type: application/json
 
 {
     "name":"Manikchak High Madrasah(H.S)",
+    "dise":"19071515802",
     "grade":"Higher Secondary",
     "schedule_time":"10:30 am to 04:30 pm",
-    "email":"manikchakhm1921@gmail.com",    
-    "mobile":"1234567890",
-    
-    "sessionId": "6314f2cbad42dfe0354ac2fd",
+    "email":"manikchakhm1921@gmail.com",  
+    "mobile":["1234567890"],
+
+    "vill":"Manikchak",
+    "post":"Manikchak",
+    "ps":"Lalgola",
+    "pin":"742148",
+    "dist":"Murshidabad",
+
+    "imgurl": ["https://i.imgur.com/S4Timy0.jpeg"],
+
+    "sessionId": "6314b02a994013b378a643db",
     "headmasterId": "6144ed7d3a25d138702265a9",
     "asstheadmasterId": "6144ed7d3a25d138702265a9"
 
@@ -95,13 +104,22 @@ PUT  https://mhm-services.herokuapp.com/api/schools/self
 content-type: application/json
 
 {
-    "_id": "6314de384411bed4c1f7d9ba",
+    "_id": "6314f5aead42dfe0354ac304",
     "name":"Manikchak High Madrasah(H.S)",
+    "dise":"19071515802",
     "grade":"Higher Secondary",
     "schedule_time":"10:30 am to 04:30 pm",
     "email":"manikchakhm1921@gmail.com",  
-    "mobile":"1234567890",
-    
+    "mobile":["1234567890"],
+
+    "vill":"Manikchak",
+    "post":"Manikchak",
+    "ps":"Lalgola",
+    "pin":"742148",
+    "dist":"Murshidabad",
+
+    "imgurl": ["https://i.imgur.com/S4Timy0.jpeg"],
+
     "sessionId": "6314b02a994013b378a643db",
     "headmasterId": "6144ed7d3a25d138702265a9",
     "asstheadmasterId": "6144ed7d3a25d138702265a9"

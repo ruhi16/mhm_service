@@ -1,4 +1,4 @@
-@ACCESS_TOKEN=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjI5NDc0NTQsImV4cCI6MTY2MzAzMzg1NCwiYXVkIjoiNjMwMDVlNjMyNjM2YjlmZTFiNTMwNDdmIiwiaXNzIjoicmF3c29sdXRpb25zLmNvbSJ9.hm7je-n0RE7UrmB0O4MGh9QFI0Mc4_tYynvxXoW3-ZU
+@ACCESS_TOKEN=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjMxODA3OTAsImV4cCI6MTY2MzI2NzE5MCwiYXVkIjoiNjMyMjFmZjY0NGE0ODM3ZTRhOGJlMTNhIiwiaXNzIjoicmF3c29sdXRpb25zLmNvbSJ9.t1nQAyIShzagDPMXTG0XmDF9wTH0k0IhWvJZxZw1Gu0
 
 @REFRESH_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjI5NDc0NTQsImV4cCI6MTY5NDUwNTA1NCwiYXVkIjoiNjMwMDVlNjMyNjM2YjlmZTFiNTMwNDdmIiwiaXNzIjoicmF3c29sdXRpb25zLmNvbSJ9.qJb8CGE98ibNbtOC5rtjtntbsYXb2Noq2Spa6QjYZtE
 
@@ -7,7 +7,7 @@
 
 
 ### Root Page ###
-GET http://localhost:3000/api/users
+GET http://localhost:5000/api/users
 content-type: application/json,
 authorization: {{ACCESS_TOKEN}}
 
@@ -15,7 +15,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Register Page ###
-POST  http://localhost:3000/api/users/register
+POST  http://localhost:5000/api/users/register
 content-type: application/json
 
 {
@@ -29,7 +29,7 @@ content-type: application/json
 
 
 ### Login Page ###
-POST  http://localhost:3000/api/users/login
+POST  http://localhost:5000/api/users/login
 content-type: application/json
 
 {    
@@ -38,7 +38,7 @@ content-type: application/json
 }
 
 ### Forgot Password Page ###
-POST  http://localhost:3000/api/users/forgot_password
+POST  http://localhost:5000/api/users/forgot_password
 content-type: application/json
 
 {    
@@ -46,7 +46,7 @@ content-type: application/json
 }
 
 ### Reset Password POST Page ###
-POST  http://localhost:3000/api/users/reset_password
+POST  http://localhost:5000/api/users/reset_password
 content-type: application/json
 
 {  
@@ -56,17 +56,17 @@ content-type: application/json
 }
 
 ### Verify Url Page ###
-GET  http://localhost:3000/api/users/Vd3coLF9JFXjYHJgYyY4
+GET  http://localhost:5000/api/users/Vd3coLF9JFXjYHJgYyY4
 content-type: application/json
 
 
 ### Is_Verified Email Url (After Login, with AccTok) ###
-GET  http://localhost:3000/api/users/is_verify_email_url
+GET  http://localhost:5000/api/users/is_verify_email_url
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
 ### Verify Url only ###
-GET  http://localhost:3000/api/users/self/9MsapikmTQYVXKyKcW4C
+GET  http://localhost:5000/api/users/self/9MsapikmTQYVXKyKcW4C
 content-type: application/json
 
 
@@ -75,14 +75,14 @@ content-type: application/json
 
 
 ### User's Dashboard
-GET http://localhost:3000/api/users
+GET http://localhost:5000/api/users
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
 
 
 ### Update Page ###
-PUT http://localhost:3000/api/users/update
+PUT http://localhost:5000/api/users/update
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -93,7 +93,7 @@ authorization: {{ACCESS_TOKEN}}
 }
 
 ### Delete User ###
-DELETE http://localhost:3000/api/users/delete
+DELETE http://localhost:5000/api/users/delete
 content-type: application/json
 
 {
@@ -110,7 +110,7 @@ content-type: application/json
 
 
 ### Only Logged In & Authenticated User 
-GET http://localhost:3000/api/users
+GET http://localhost:5000/api/users
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -121,7 +121,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### All Users List original
-GET http://localhost:3000/api/users/allalong
+GET http://localhost:5000/api/users/allalong
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -130,13 +130,13 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### All Users List
-GET http://localhost:3000/api/users/613273513aae8b05281b70dd
+GET http://localhost:5000/api/users/613273513aae8b05281b70dd
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
 
 ### Address New
-POST http://localhost:3000/api/address
+POST http://localhost:5000/api/address
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -150,7 +150,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Ambulance New
-POST http://localhost:3000/api/ambulance
+POST http://localhost:5000/api/ambulance
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -174,7 +174,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Test Only: Show all addresses
-GET http://localhost:3000/api/address
+GET http://localhost:5000/api/address
 content-type: application/json
 
 
@@ -205,7 +205,7 @@ content-type: application/json
 
 
 ### Home Page ###
-GET http://localhost:3000/ping
+GET http://localhost:5000/ping
 content-type: application/json,
 
 
@@ -227,7 +227,7 @@ content-type: application/json,
 
 
 ### User's Dashboard
-GET http://localhost:3000/api/users
+GET http://localhost:5000/api/users
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -241,7 +241,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Registered User's OTP Verification
-POST http://localhost:3000/api/users/OTP_vefiry
+POST http://localhost:5000/api/users/OTP_vefiry
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -254,7 +254,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### Registered User's OTP Resend
-GET http://localhost:3000/api/users/OTP_resend
+GET http://localhost:5000/api/users/OTP_resend
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -272,7 +272,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### User's New Post
-POST http://localhost:3000/api/users/post
+POST http://localhost:5000/api/users/post
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -284,7 +284,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### User's New Comment on any post
-POST http://localhost:3000/api/users/post/comment
+POST http://localhost:5000/api/users/post/comment
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -299,7 +299,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### User's Logout
-POST http://localhost:3000/api/logout
+POST http://localhost:5000/api/logout
 content-type: application/json,
 authorization: {{ACCESS_TOKEN}} 
 
@@ -314,7 +314,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### New Request ###
-GET http://localhost:3000/unknown
+GET http://localhost:5000/unknown
 
 
 
@@ -322,13 +322,13 @@ GET http://localhost:3000/unknown
 
 
 ### All Clubs
-GET http://localhost:3000/api/clubs
+GET http://localhost:5000/api/clubs
 
 
 
 
 ### All Clubs
-POST http://localhost:3000/api/clubs/register
+POST http://localhost:5000/api/clubs/register
 content-type: application/json
 
 {
