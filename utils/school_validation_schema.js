@@ -46,6 +46,7 @@ const schoolRegisterSchema = Joi.object({
     email: Joi.string().email().lowercase().required(),
     mobile: Joi.array().items(Joi.string().max(10).required()),
 
+    
     vill: Joi.string().min(0).max(11),
     post: Joi.string().min(0).max(11),
     ps: Joi.string().min(0).max(11),
