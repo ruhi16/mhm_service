@@ -65,9 +65,8 @@ content-type: application/json
 
 //----------------------- School -------------------------------------
 ### Get 1 Schools Info(GET Page) ###
-GET  https://mhm-services.herokuapp.com/api/schools/self/{{schoolId}}
+GET https://mhm-services.herokuapp.com/api/schools/self/{{schoolId}}
 content-type: application/json
-
 
 ### Get All Schools Info(GET Page) ###
 GET  https://mhm-services.herokuapp.com/api/schools/self

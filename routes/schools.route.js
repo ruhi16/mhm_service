@@ -46,7 +46,7 @@ try{
         }
 
         res.send({
-            school: schools,
+            schools: schools,
 
         });
 
