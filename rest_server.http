@@ -500,7 +500,7 @@ content-type: application/json
 
 //----------------------- Teacher -------------------------------------
 ### Get 1 Teacher Info(GET Page) ###
-GET  https://mhm-services.herokuapp.com/api/schools/teachers/630e5cd56c1ba136fa1bd3ab
+GET  https://mhm-services.herokuapp.com/api/schools/teachers/6316b3dceab3b8188b29bf4f
 content-type: application/json
 
 
