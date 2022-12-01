@@ -3,10 +3,10 @@
 
 const mongoose = require('mongoose');
 const config = require('config');
-// mongodbUri = "mongodb+srv://ruhi16:asdf1234@cluster0.yaizg.mongodb.net/digidurgapuja";  //production
+mongodbUri = "mongodb+srv://ruhi16:asdf1234@cluster0.yaizg.mongodb.net/digidurgapuja";  //production
 // mongodbUri = "mongodb://localhost:27017/digidurgapuja";  //development localhost
 
-mongodbUri = config.get('dbconn.mongodbURI');
+//mongodbUri = config.get('dbconn.mongodbURI');
 
 console.log(mongodbUri);
 
