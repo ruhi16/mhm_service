@@ -302,8 +302,8 @@ router.delete('/delete', verifyAccessToken, async (req, res, next) => {
 });
 
 
-
-router.get('/', verifyAccessToken, async(req, res, next) => {
+//verifyAccessToken
+router.get('/', async(req, res, next) => {
     // console.log('abcd')
     try{
         // console.log(req.headers['authorization']);
